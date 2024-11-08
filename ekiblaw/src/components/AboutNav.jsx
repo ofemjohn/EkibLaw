@@ -5,7 +5,7 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useMediaQuery } from '@mui/material';
 import { HashLink as Link } from "react-router-hash-link";
 
-const Navbar = () => {
+const AboutNav = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -55,23 +55,8 @@ const Navbar = () => {
           <Drawer anchor="top" open={drawerOpen} onClose={handleDrawerToggle}>
             <List sx={{ width: '100%', backgroundColor: '#1E1E1E', color: '#FFF' }}>
               <ListItemButton onClick={() => setDrawerOpen(false)}>
-                <Link smooth to="#home" onClick={() => setActiveLink('home')} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to="/" onClick={() => setActiveLink('home')} style={{ textDecoration: 'none', color: 'inherit' }}>
                   Home
-                </Link>
-              </ListItemButton>
-              <ListItemButton onClick={() => setDrawerOpen(false)}>
-                <Link smooth to="#about-us" onClick={() => setActiveLink('about us')} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  About Us
-                </Link>
-              </ListItemButton>
-              <ListItemButton onClick={() => setDrawerOpen(false)}>
-                <Link smooth to="#services" onClick={() => setActiveLink('services')} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  Services
-                </Link>
-              </ListItemButton>
-              <ListItemButton onClick={() => setDrawerOpen(false)}>
-                <Link smooth to="#blog" onClick={() => setActiveLink('blog')} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  Blog
                 </Link>
               </ListItemButton>
               <ListItemButton onClick={() => setDrawerOpen(false)}>
@@ -99,8 +84,7 @@ const Navbar = () => {
       ) : (
         <Box sx={{ display: 'flex', gap: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
           <Link
-            smooth
-            to="#home"
+            to="/"
             onClick={() => setActiveLink('home')}
             style={{
               textDecoration: 'none',
@@ -109,42 +93,6 @@ const Navbar = () => {
             }}
           >
             Home
-          </Link>
-          <Link
-            smooth
-            to="#about-us"
-            onClick={() => setActiveLink('about us')}
-            style={{
-              textDecoration: 'none',
-              color: activeLink === 'about us' ? '#D8B482' : '#FFF',
-              borderBottom: activeLink === 'about us' ? '3px solid #D8B482' : 'none',
-            }}
-          >
-            About Us
-          </Link>
-          <Link
-            smooth
-            to="#services"
-            onClick={() => setActiveLink('services')}
-            style={{
-              textDecoration: 'none',
-              color: activeLink === 'services' ? '#D8B482' : '#FFF',
-              borderBottom: activeLink === 'services' ? '3px solid #D8B482' : 'none',
-            }}
-          >
-            Services
-          </Link>
-          <Link
-            smooth
-            to="#blog"
-            onClick={() => setActiveLink('blog')}
-            style={{
-              textDecoration: 'none',
-              color: activeLink === 'blog' ? '#D8B482' : '#FFF',
-              borderBottom: activeLink === 'blog' ? '3px solid #D8B482' : 'none',
-            }}
-          >
-            Blog
           </Link>
           <Link
             smooth
@@ -180,4 +128,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default AboutNav;

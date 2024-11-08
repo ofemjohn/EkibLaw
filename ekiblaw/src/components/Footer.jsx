@@ -1,14 +1,32 @@
 import React from "react";
 import { Box, Typography, Divider, Link } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    console.log('Navigating to Home page');
+    navigate('/'); // Navigate to the home page
+    window.setTimeout(() => { // Wait for navigation to complete before scrolling
+      document.documentElement.scrollTop = 0; // For most browsers
+      document.body.scrollTop = 0; // For Safari
+    }, 100); // Adjust timeout as necessary
+  };
+
   const contactData = [
     { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/abb5cc729611e0bdb358b85da49e92b79685d4eb49422246db4688796ebceff6?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e", text: "303-434-4567", alt: "Phone icon" },
     { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/cc881fe048a47f1713e8040c3670faf26ab398899d8f2fc7af6055e8175219f6?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e", text: "thelaw@lawfirm.com", alt: "Email icon" },
     { icon: "https://cdn.builder.io/api/v1/image/assets/TEMP/caa2157555570509ef16160f7fbe35b667818e1a72fb622171471d9628a9d361?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e", text: "Lancaster, TX 75134 Brownlee Park Dallas", alt: "Location icon" }
   ];
 
-  const navItems = ["Home", "About", "Services", "Our Team", "Blogs", "Contact Us"];
+  const navItems = [
+    { label: "Home", action: handleHomeClick }, 
+    { label: "About", link: "#about-us" }, 
+    { label: "Services", link: "#services" },
+    { label: "Blogs", link: "#blog" },
+    { label: "Contact Us", link: "#contact" },
+  ];
 
   const socialIcons = [
     { src: "https://cdn.builder.io/api/v1/image/assets/TEMP/3a2510b3332cee116c47b95dc29a31b627da45d1468399f0bf46013308e69189?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e", alt: "Facebook icon" },
@@ -50,8 +68,18 @@ const Footer = () => {
 
       <Box sx={{ display: 'flex', justifyContent: 'center', gap: 4, marginTop: '32px' }}>
         {navItems.map((item, index) => (
-          <Link key={index} href={`#${item.toLowerCase().replace(' ', '-')}`} sx={{ color: '#FFFFFF', textDecoration: 'none', fontWeight: 500 }}>
-            {item}
+          <Link 
+            key={index} 
+            onClick={item.action ? item.action : undefined}
+            href={item.link ? item.link : undefined}
+            sx={{ 
+              color: '#FFFFFF', 
+              textDecoration: 'none', 
+              fontWeight: 500,
+              '&:hover': { textDecoration: 'none' } // Ensure no underline on hover
+            }}
+          >
+            {item.label}
           </Link>
         ))}
       </Box>

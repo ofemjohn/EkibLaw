@@ -1,6 +1,18 @@
 import { Box, Typography, Button, Divider, Grid, CardMedia } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MeetJaneSection = () => {
+  const navigate = useNavigate();
+
+  const handleReadMoreClick = () => {
+    console.log('Navigating to About page');
+    navigate('/about'); // Navigate to the about page
+    window.setTimeout(() => { // Wait for navigation to complete before scrolling
+      document.documentElement.scrollTop = 0; // For most browsers
+      document.body.scrollTop = 0; // For Safari
+    }, 100); // Adjust timeout as necessary
+  };
+
   return (
     <Grid container spacing={12} alignItems="stretch" sx={{ marginBottom: '50px' }}>
       {/* Image Section */}
@@ -59,6 +71,7 @@ const MeetJaneSection = () => {
           </Typography>
         </Box>
         <Button
+          onClick={handleReadMoreClick}
           variant="contained"
           sx={{
             backgroundColor: 'rgba(239, 174, 100, 1)',

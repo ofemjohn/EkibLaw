@@ -1,5 +1,6 @@
 import { Box, Typography, Button, Grid } from '@mui/material';
 import Navbar from './Navbar';
+import { HashLink as Link } from "react-router-hash-link"; // Import HashLink
 
 const HeroSection = () => {
   return (
@@ -46,21 +47,23 @@ const HeroSection = () => {
               >
                 Providing expert legal counsel in personal injury, family <br></br> law, and corporate disputes.
               </Typography>
-              <Button
-                variant="contained"
-                sx={{
-                  backgroundColor: '#EFAE64',
-                  padding: '16px 32px',
-                  ':hover': {
-                    backgroundColor: 'rgba(239, 174, 100, 0.9)',
-                  },
-                  width: '245px',
-                  height: '72px',
-                  alignSelf: { xs: 'center', md: 'flex-start' }, // Center button on smaller screens
-                }}
-              >
-                Get A Consultation
-              </Button>
+              <Link smooth to="#contact" style={{ textDecoration: 'none' }}> {/* Link to Contact Section */}
+                <Button
+                  variant="contained"
+                  sx={{
+                    backgroundColor: '#EFAE64',
+                    padding: '16px 32px',
+                    ':hover': {
+                      backgroundColor: 'rgba(239, 174, 100, 0.9)',
+                    },
+                    width: '245px',
+                    height: '72px',
+                    alignSelf: { xs: 'center', md: 'flex-start' }, // Center button on smaller screens
+                  }}
+                >
+                  Get A Consultation
+                </Button>
+              </Link>
             </Box>
           </Grid>
 
@@ -79,8 +82,6 @@ const HeroSection = () => {
                 alt="Hero Image"
                 sx={{
                   width: '100%',
-                //   maxWidth: '600px',
-                //   height: 'auto',
                 }}
               />
             </Box>

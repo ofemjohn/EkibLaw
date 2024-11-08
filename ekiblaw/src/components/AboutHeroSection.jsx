@@ -1,7 +1,15 @@
+import React from 'react';
 import { Box, Typography, Button, Grid } from "@mui/material";
-import Navbar from "./Navbar";
+import AboutNav from "./AboutNav";
 
 const AboutHeroSection = () => {
+  const handleConsultationClick = () => {
+    const element = document.getElementById('contacts');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -14,7 +22,7 @@ const AboutHeroSection = () => {
     >
       <Box>
         {/* Navbar */}
-        <Navbar />
+        <AboutNav />
 
         {/* Hero Content */}
         <Grid container spacing={12} alignItems="center" sx={{ marginTop: "0px" }}>
@@ -25,12 +33,12 @@ const AboutHeroSection = () => {
                 display: "flex",
                 flexDirection: "column",
                 gap: "20px",
-                textAlign: { xs: "center", md: "left" }, // Center text on smaller screens
+                textAlign: { xs: "center", md: "left" },
               }}
             >
               <Typography
                 sx={{
-                  fontSize: "30px", // Adjusted size for "Get To Know"
+                  fontSize: "30px",
                   color: "rgba(210, 210, 210, 1)",
                 }}
               >
@@ -59,6 +67,7 @@ const AboutHeroSection = () => {
               </Typography>
               <Button
                 variant="contained"
+                onClick={handleConsultationClick}
                 sx={{
                   backgroundColor: "#EFAE64",
                   padding: "16px 32px",
@@ -67,7 +76,7 @@ const AboutHeroSection = () => {
                   },
                   width: "245px",
                   height: "72px",
-                  alignSelf: { xs: "center", md: "flex-start" }, // Center button on smaller screens
+                  alignSelf: { xs: "center", md: "flex-start" },
                 }}
               >
                 Get A Consultation
@@ -80,8 +89,8 @@ const AboutHeroSection = () => {
             <Box
               sx={{
                 display: "flex",
-                justifyContent: { xs: "center", md: "flex-end" }, // Center image on smaller screens
-                height: "100%", // Ensure it stretches to match the text section
+                justifyContent: { xs: "center", md: "flex-end" },
+                height: "100%",
               }}
             >
               <Box
@@ -90,10 +99,8 @@ const AboutHeroSection = () => {
                 alt="Profile picture"
                 loading="lazy"
                 sx={{
-                  width: '100%', // Make the image take the full width of its container
-                //   maxWidth: '526px',
-                //   height: 'auto',
-                  borderRadius: '180px 0 0 0', // Apply corner radius
+                  width: '100%',
+                  borderRadius: '180px 0 0 0',
                 }}
               />
             </Box>

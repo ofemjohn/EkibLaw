@@ -14,14 +14,15 @@ const MainSection = () => {
         zIndex: 1,
       }}
     >
-      <Box>
+      <Box id="about-us">
         <MeetJaneSection />
-        <WhyChooseUsSection />
+      </Box>
+      <WhyChooseUsSection />
+      <Box id="services">
         <PracticeAreaSection />
-        {/* New Section: Blog Post */}
-        <Box sx={{ width: '100%', textAlign: { xs: 'center', md: 'left' }, marginTop: '100px' }}>
-          <BlogPost />
-        </Box>
+      </Box>
+      <Box id="blog" sx={{ width: '100%', textAlign: { xs: 'center', md: 'left' }, marginTop: '100px' }}>
+        <BlogPost />
       </Box>
     </Box>
   );

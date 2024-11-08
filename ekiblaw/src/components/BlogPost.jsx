@@ -1,27 +1,53 @@
 import React from 'react';
-import { Box, Typography, Divider, Grid, Card, CardMedia, CardContent, Link, IconButton } from '@mui/material';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import Carousel from 'react-material-ui-carousel';
+import { Box, Typography, Divider, Card, CardMedia, CardContent, Link, Grid } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const blogPosts = [
   {
     image: "https://cdn.builder.io/api/v1/image/assets/TEMP/7ddac9cd411389d8138da087224da6da6a1dc6214188c635d2f61f4102076279?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e",
     title: "Power of Attorney",
     content: "Acquiring property is a major milestone, but it can also be a complex legal process.",
+    route: "/blogone",
   },
   {
     image: "https://cdn.builder.io/api/v1/image/assets/TEMP/f05e6c3e8c55f9741c64b07f7b91f71e52824484389e246d0bc4f9200210f9db?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e",
     title: "Family Law",
     content: "Separation doesn't stop you from your parental responsibilities. Follow our guides to be in the lives of your children.",
+    route: "/blogtwo",
   },
   {
     image: "https://cdn.builder.io/api/v1/image/assets/TEMP/a9b6933f810c34b9aadb8d1b1ff0bdc7eeeccffccb5c32aac28ed1764fbb67c4?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e",
     title: "Pro Bono",
     content: "Read more on our campus tour, and how we encourage young minds towards a noble cause.",
+    route: "/blogthree",
+  },
+  {
+    image: "https://cdn.builder.io/api/v1/image/assets/TEMP/7ddac9cd411389d8138da087224da6da6a1dc6214188c635d2f61f4102076279?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e",
+    title: "Real Estate Law",
+    content: "Navigating property transactions made simple and secure. Let our experts guide you.",
+    route: "/blogfour",
+  },
+  {
+    image: "https://cdn.builder.io/api/v1/image/assets/TEMP/f05e6c3e8c55f9741c64b07f7b91f71e52824484389e246d0bc4f9200210f9db?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e",
+    title: "Corporate Law",
+    content: "Understanding corporate law essentials for better decision-making in your business.",
+    route: "/blogfive",
   },
 ];
 
-const BlogPostCard = ({ image, title, content }) => {
+const BlogPostCard = ({ image, title, content, route }) => {
+  const navigate = useNavigate();
+
+  const handleBlogClick = () => {
+    console.log('Navigating to blog page');
+    navigate(route); // Navigate to the specified blog route
+    window.setTimeout(() => { // Wait for navigation to complete before scrolling
+      document.documentElement.scrollTop = 0; // For most browsers
+      document.body.scrollTop = 0; // For Safari
+    }, 100); // Adjust timeout as necessary
+  };
+
   return (
     <Card
       sx={{
@@ -46,7 +72,11 @@ const BlogPostCard = ({ image, title, content }) => {
         <Typography variant="body2" sx={{ color: '#4F4F4F', marginBottom: '16px' }}>
           {content}
           <span style={{ display: 'inline' }}>
-            <Link href="#" underline="hover" sx={{ fontStyle: 'italic', color: '#ACACAC', cursor: 'pointer', marginLeft: '8px' }}>
+            <Link
+              onClick={handleBlogClick} // Use handleBlogClick for routing
+              underline="hover"
+              sx={{ fontStyle: 'italic', color: '#447F6D', cursor: 'pointer', marginLeft: '8px' }}
+            >
               Read more...
             </Link>
           </span>
@@ -67,24 +97,24 @@ const BlogSection = () => {
             Blog Post
           </Typography>
         </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <IconButton sx={{ borderRadius: '50%', backgroundColor: '#ECDAC1', color: '' }}>
-            <ArrowBackIosIcon />
-          </IconButton>
-          <IconButton sx={{ borderRadius: '50%', backgroundColor: '#D8B482', color: '' }}>
-            <ArrowForwardIosIcon />
-          </IconButton>
-        </Box>
       </Box>
 
-      {/* Blog Post Cards */}
-      <Grid container spacing={3} sx={{ marginTop: 2 }}>
+      {/* Blog Post Carousel */}
+      <Carousel
+        navButtonsAlwaysVisible
+        interval={3000}
+        indicators={true}
+        animation="slide"
+        autoPlay={true}
+      >
         {blogPosts.map((post, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <BlogPostCard {...post} />
+          <Grid container spacing={3} key={index} sx={{ justifyContent: 'center' }}>
+            <Grid item xs={12} sm={6} md={4}>
+              <BlogPostCard {...post} />
+            </Grid>
           </Grid>
         ))}
-      </Grid>
+      </Carousel>
     </Box>
   );
 };

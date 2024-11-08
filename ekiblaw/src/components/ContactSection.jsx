@@ -1,27 +1,88 @@
-import React from 'react';
-import { Box, Typography, Grid, TextField, Button, IconButton, Card, CardMedia } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Typography, Grid, TextField, Button, IconButton, Card, CardMedia, Snackbar, LinearProgress } from '@mui/material';
+import MuiAlert from '@mui/material/Alert'; // Import Alert component
 
 const contactItems = [
   {
     icon: 'https://cdn.builder.io/api/v1/image/assets/TEMP/efb64a751cb7d5d85d94cb184a091cc8d45b9b3ef60ccd34ef01621031d6c2cb?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e',
     label: 'Email',
     value: 'vanguard@vanguardfirm.com',
+    href: 'mailto:vanguard@vanguardfirm.com',
   },
   {
     icon: 'https://cdn.builder.io/api/v1/image/assets/TEMP/1b29a66c6955137a4184c9579c2fe1398070617b5d12747f68c93dad2e781324?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e',
     label: 'Telephone',
     value: '425-356-0578',
+    href: 'tel:425-356-0578',
   },
   {
     icon: 'https://cdn.builder.io/api/v1/image/assets/TEMP/a839cbadebaf7e8a372e352709a4a81ff1117e61718dfcd4577548608b3b8fae?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e',
     label: 'Address',
     value: '1234 Main St, Suite 500, Houston, TX 77002',
+    href: null,
   },
 ];
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  });
+  const [loading, setLoading] = useState(false);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccessMessage('');
+
+    try {
+      const response = await fetch('https://api.sheetbest.com/sheets/60382b88-e078-4437-bd3c-f665bf41f062', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSuccessMessage('Your message has been sent successfully!');
+        setOpenSnackbar(true);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        }); // Reset form
+      } else {
+        throw new Error('Something went wrong');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setSuccessMessage('Failed to send your message. Please try again.');
+      setOpenSnackbar(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <Box sx={{ backgroundColor: '#ECDAC1', padding: { xs: '20px', md: '45px 70px' }, position: 'relative' }}>
+    <Box 
+      id="contact"
+      sx={{ backgroundColor: '#ECDAC1', padding: { xs: '20px', md: '45px 70px' }, position: 'relative' }}
+    >
       <img
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/8c13277110fd8d9b65dd5dc8df11452e458f7a0fafae037b5092a8eacbf2fbfb?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e"
         alt=""
@@ -39,7 +100,22 @@ const ContactSection = () => {
           </Typography>
 
           {contactItems.map((item, index) => (
-            <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 2, marginBottom: 2 }}>
+            <Box
+              key={index}
+              component="a"
+              href={item.href || '#'}
+              target={item.href ? '_self' : '_blank'}
+              rel="noopener noreferrer"
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 2,
+                marginBottom: 2,
+                textDecoration: 'none',
+                color: 'inherit',
+                '&:hover': { textDecoration: item.href ? 'underline' : 'none' },
+              }}
+            >
               <IconButton sx={{ backgroundColor: '#EFAE64', padding: 1 }}>
                 <img src={item.icon} alt={item.label} style={{ width: '24px', height: '24px' }} />
               </IconButton>
@@ -76,25 +152,28 @@ const ContactSection = () => {
             Fill out this form to set up a free consultation.
           </Typography>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <Grid container spacing={2} sx={{ marginBottom: 2 }}>
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
                   variant="outlined"
                   label="First Name"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
                   required
                   sx={{
                     backgroundColor: '#FFFFFF',
                     '& .MuiOutlinedInput-root': {
                       '& fieldset': {
-                        borderColor: '#cccccc', // Default border color
+                        borderColor: '#cccccc',
                       },
                       '&:hover fieldset': {
-                        borderColor: '#aaaaaa', // Hover border color
+                        borderColor: '#aaaaaa',
                       },
                       '&.Mui-focused fieldset': {
-                        borderColor: '#447F6D', // Focus border color
+                        borderColor: '#447F6D',
                       },
                     },
                   }}
@@ -105,18 +184,21 @@ const ContactSection = () => {
                   fullWidth
                   variant="outlined"
                   label="Last Name"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
                   required
                   sx={{
                     backgroundColor: '#FFFFFF',
                     '& .MuiOutlinedInput-root': {
                       '& fieldset': {
-                        borderColor: '#cccccc', // Default border color
+                        borderColor: '#cccccc',
                       },
                       '&:hover fieldset': {
-                        borderColor: '#aaaaaa', // Hover border color
+                        borderColor: '#aaaaaa',
                       },
                       '&.Mui-focused fieldset': {
-                        borderColor: '#447F6D', // Focus border color
+                        borderColor: '#447F6D',
                       },
                     },
                   }}
@@ -127,18 +209,21 @@ const ContactSection = () => {
                   fullWidth
                   variant="outlined"
                   label="Email Address"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   required
                   sx={{
                     backgroundColor: '#FFFFFF',
                     '& .MuiOutlinedInput-root': {
                       '& fieldset': {
-                        borderColor: '#cccccc', // Default border color
+                        borderColor: '#cccccc',
                       },
                       '&:hover fieldset': {
-                        borderColor: '#aaaaaa', // Hover border color
+                        borderColor: '#aaaaaa',
                       },
                       '&.Mui-focused fieldset': {
-                        borderColor: '#447F6D', // Focus border color
+                        borderColor: '#447F6D',
                       },
                     },
                   }}
@@ -149,18 +234,21 @@ const ContactSection = () => {
                   fullWidth
                   variant="outlined"
                   label="Phone Number"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
                   required
                   sx={{
                     backgroundColor: '#FFFFFF',
                     '& .MuiOutlinedInput-root': {
                       '& fieldset': {
-                        borderColor: '#cccccc', // Default border color
+                        borderColor: '#cccccc',
                       },
                       '&:hover fieldset': {
-                        borderColor: '#aaaaaa', // Hover border color
+                        borderColor: '#aaaaaa',
                       },
                       '&.Mui-focused fieldset': {
-                        borderColor: '#447F6D', // Focus border color
+                        borderColor: '#447F6D',
                       },
                     },
                   }}
@@ -171,18 +259,21 @@ const ContactSection = () => {
                   fullWidth
                   variant="outlined"
                   label="Subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
                   required
                   sx={{
                     backgroundColor: '#FFFFFF',
                     '& .MuiOutlinedInput-root': {
                       '& fieldset': {
-                        borderColor: '#cccccc', // Default border color
+                        borderColor: '#cccccc',
                       },
                       '&:hover fieldset': {
-                        borderColor: '#aaaaaa', // Hover border color
+                        borderColor: '#aaaaaa',
                       },
                       '&.Mui-focused fieldset': {
-                        borderColor: '#447F6D', // Focus border color
+                        borderColor: '#447F6D',
                       },
                     },
                   }}
@@ -193,30 +284,40 @@ const ContactSection = () => {
                   fullWidth
                   variant="outlined"
                   label="Your Message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                   multiline
-                  rows={8} // Increase this to adjust the height to match the map
+                  rows={8}
                   required
                   sx={{
                     backgroundColor: '#FFFFFF',
                     '& .MuiOutlinedInput-root': {
                       '& fieldset': {
-                        borderColor: '#cccccc', // Default border color
+                        borderColor: '#cccccc',
                       },
                       '&:hover fieldset': {
-                        borderColor: '#aaaaaa', // Hover border color
+                        borderColor: '#aaaaaa',
                       },
                       '&.Mui-focused fieldset': {
-                        borderColor: '#447F6D', // Focus border color
+                        borderColor: '#447F6D',
                       },
                     },
                   }}
                 />
               </Grid>
             </Grid>
-            <Button fullWidth variant="contained" sx={{ backgroundColor: '#EFAE64', color: '#000', padding: 2 }}>
+            {loading && <LinearProgress sx={{ marginBottom: 2 }} />}
+            <Button type="submit" fullWidth variant="contained" sx={{ backgroundColor: '#EFAE64', color: '#000', padding: 2 }}>
               Submit
             </Button>
           </form>
+
+          <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={() => setOpenSnackbar(false)} anchorOrigin={{ vertical: "top", horizontal: "right" }}>
+            <MuiAlert elevation={6} severity="success" onClose={() => setOpenSnackbar(false)}>
+              {successMessage}
+            </MuiAlert>
+          </Snackbar>
         </Grid>
       </Grid>
     </Box>
