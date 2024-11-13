@@ -1,7 +1,7 @@
 import { Box, Typography, Divider, Grid, Card, CardMedia, CardContent } from '@mui/material';
-import WhyChooseus1 from '../assets/WhyChooseus1.png';
-import WhyChooseus2 from '../assets/WhyChooseus2.png';
-import WhyChooseus3 from '../assets/WhyChooseus3.png';
+import Whychooseus1 from '../assets/Whychooseus1.png';
+import Whychooseus2 from '../assets/Whychooseus2.png';
+import Whychooseus3 from '../assets/Whychooseus3.png';
 
 
 const WhyChooseUsSection = () => {
@@ -27,7 +27,7 @@ const WhyChooseUsSection = () => {
           <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
             <CardMedia
               component="img"
-              image={WhyChooseus1}
+              image={Whychooseus1}
               alt="Deep Expertise"
               sx={{
                 width: '100%',
@@ -67,7 +67,7 @@ const WhyChooseUsSection = () => {
           <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
             <CardMedia
               component="img"
-              image={WhyChooseus2}
+              image={Whychooseus2}
               alt="Personalized Service"
               sx={{
                 width: '100%',
@@ -107,7 +107,7 @@ const WhyChooseUsSection = () => {
           <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
             <CardMedia
               component="img"
-              image={WhyChooseus3}
+              image={Whychooseus3}
               alt="Integrity and Ethics"
               sx={{
                 width: '100%',
