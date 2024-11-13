@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import BlogPost from '../components/BlogPost';
 import MeetJaneSection from '../components/MeetJaneSection';
-import WhyChooseUsSection from '../components/WhyChooseUsSection';
+import WhyChooseUs from '../components/WhyChooseUs';
 import PracticeAreaSection from '../components/PracticeAreaSection';
 
 const MainSection = () => {
@@ -17,7 +17,7 @@ const MainSection = () => {
       <Box id="about-us">
         <MeetJaneSection />
       </Box>
-      <WhyChooseUsSection />
+      <WhyChooseUs />
       <Box id="services">
         <PracticeAreaSection />
       </Box>

@@ -1,10 +1,10 @@
 import { Box, Typography, Divider, Grid, Card, CardMedia, CardContent } from '@mui/material';
-import Whychooseus1 from '../assets/Whychooseus1.png';
-import Whychooseus2 from '../assets/Whychooseus2.png';
-import Whychooseus3 from '../assets/Whychooseus3.png';
+import whychooseusone from '../assets/whychooseusone.png';
+import whychooseustwo from '../assets/whychooseustwo.png';
+import whychooseusthree from '../assets/whychooseusthree.png';
 
 
-const WhyChooseUsSection = () => {
+const WhyChooseUs = () => {
   return (
     <Box sx={{ width: '100%', textAlign: { xs: 'center', md: 'left' }, marginTop: '30px' }}>
       <Box sx={{ display: 'flex', justifyContent: { xs: 'left', md: 'start' }, alignItems: 'center', gap: 2, fontSize: '40px' }}>
@@ -27,7 +27,7 @@ const WhyChooseUsSection = () => {
           <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
             <CardMedia
               component="img"
-              image={Whychooseus1}
+              image={whychooseusone}
               alt="Deep Expertise"
               sx={{
                 width: '100%',
@@ -67,7 +67,7 @@ const WhyChooseUsSection = () => {
           <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
             <CardMedia
               component="img"
-              image={Whychooseus2}
+              image={whychooseustwo}
               alt="Personalized Service"
               sx={{
                 width: '100%',
@@ -107,7 +107,7 @@ const WhyChooseUsSection = () => {
           <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
             <CardMedia
               component="img"
-              image={Whychooseus3}
+              image={whychooseusthree}
               alt="Integrity and Ethics"
               sx={{
                 width: '100%',
@@ -146,4 +146,4 @@ const WhyChooseUsSection = () => {
   );
 };
 
-export default WhyChooseUsSection;
+export default WhyChooseUs;
