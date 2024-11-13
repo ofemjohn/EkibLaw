@@ -1,58 +1,68 @@
 import React from "react";
 import { Box, Typography, Divider, Grid, List, ListItem, ListItemText, ListItemIcon } from "@mui/material";
-import StarIcon from '@mui/icons-material/Star'; // Example icon import
 import GavelIcon from '@mui/icons-material/Gavel';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookIcon from '@mui/icons-material/Book';
-import HeartIcon from '@mui/icons-material/Favorite';
-import ThumbsUpIcon from '@mui/icons-material/ThumbUp';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import EKIB3 from '../assets/EKIB3.jpg';
+
+
 
 const achievements = [
   {
-    title: "Top 100 Trial Lawyers:",
-    description: "Recognized by the National Trial Lawyers for excellence in trial advocacy.",
-    icon: <StarIcon sx={{ color: '#FFD700' }} />
+    title: "Public Defender Excellence:",
+    description: "Successfully represented hundreds of clients in various criminal cases, achieving favorable outcomes in both misdemeanor and felony cases.",
+    icon: <GavelIcon sx={{ color: '#8B4513' }} />,
   },
   {
-    title: "Landmark Case Victory:",
-    description: "Secured a multi-million dollar settlement in a groundbreaking corporate litigation case involving intellectual property rights.",
-    icon: <GavelIcon sx={{ color: '#8B4513' }} />
+    title: "Landmark Legal Cases:",
+    description: "Achieved significant victories in high-profile cases, including effective plea deals and a stellar trial record.",
+    icon: <CheckCircleIcon sx={{ color: '#32CD32' }} />,
   },
   {
-    title: "Super Lawyers Recognition:",
-    description: "Named in Super Lawyers magazine multiple times for outstanding legal work in civil litigation.",
-    icon: <CheckCircleIcon sx={{ color: '#32CD32' }} />
-  },
-  {
-    title: "Author and Speaker:",
-    description: "Published numerous legal articles in respected journals and frequently speaks at industry conferences on topics like corporate law, litigation strategy, and dispute resolution.",
-    icon: <BookIcon sx={{ color: '#4682B4' }} />
-  },
-  {
-    title: "Leadership in Pro Bono Work:",
+    title: "Pro Bono Leadership:",
     description: "Led several pro bono initiatives, providing legal aid to underprivileged communities and mentoring young attorneys.",
-    icon: <HeartIcon sx={{ color: '#FF4500' }} />
+    icon: <FavoriteIcon sx={{ color: '#FF4500' }} />,
   },
   {
-    title: "Client Satisfaction Award:",
-    description: "Honored for exceptional client service and consistent success in resolving high-stakes disputes.",
-    icon: <ThumbsUpIcon sx={{ color: '#FFD700' }} />
-  }
+    title: "Educational Distinction:",
+    description: "Graduated with honors from top institutions, including the University of South Carolina and Nigeria Law School.",
+    icon: <BookIcon sx={{ color: '#4682B4' }} />,
+  },
+  {
+    title: "Community Engagement:",
+    description: "Actively volunteers with her church and supports various local community service events.",
+    icon: <VolunteerActivismIcon sx={{ color: '#E91E63' }} />,
+  },
+  {
+    title: "Client-Centered Approach:",
+    description: "Known for providing practical, client-focused legal strategies, resulting in high client satisfaction.",
+    icon: <ThumbUpIcon sx={{ color: '#FFD700' }} />,
+  },
 ];
 
 const KeyAchievements = () => {
   return (
     <Box sx={{ padding: 4 }}>
       <Grid container alignItems="center" sx={{ marginBottom: 2 }}>
-        {/* Vertical Divider for Key Achievements Header */}
         <Grid item>
           <Divider
-            orientation="vertical" // Vertical divider
-            sx={{ height: { xs: 40, md: 58 }, backgroundColor: '#447F6D', width: '5px' }} // Divider properties
+            orientation="vertical"
+            sx={{ height: { xs: 40, md: 58 }, backgroundColor: '#447F6D', width: '5px' }}
           />
         </Grid>
         <Grid item>
-          <Typography variant="h4" sx={{ fontWeight: 700, color: '#3D3D3D', marginLeft: 2 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 700,
+              color: '#3D3D3D',
+              marginLeft: 2,
+              fontFamily: 'Teachers',
+            }}
+          >
             Key Achievements
           </Typography>
         </Grid>
@@ -69,21 +79,21 @@ const KeyAchievements = () => {
               justifyContent: 'center',
               padding: 3,
               position: 'relative',
-              width: '387px', // Outer ring width
-              height: '499px' // Outer ring height
+              width: '387px',
+              height: '499px',
             }}
           >
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/0353e4873432cc219724d1c75ed1f3a3b7f9cc85edd900d0b94a0cd326c7e189?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e"
-              alt="Profile of a lawyer"
+              src={EKIB3}
+              alt="Profile of Ekib Ekure"
               style={{
-                width: '344.17px',
-                height: '443.77px',
-                borderRadius: '8px', // Same border radius
+                width: '370px',
+                height: '500px',
+                borderRadius: '50%',
                 position: 'absolute',
-                top: '27px', // Center the image within the background
-                left: '21px',
-                opacity: 1 
+                top: '20px',
+                left: '30px',
+                opacity: 1,
               }}
             />
           </Box>
@@ -96,8 +106,26 @@ const KeyAchievements = () => {
               <ListItem key={index}>
                 <ListItemIcon>{achievement.icon}</ListItemIcon>
                 <ListItemText
-                  primary={<strong>{achievement.title}</strong>}
-                  secondary={achievement.description}
+                  primary={
+                    <Typography
+                      variant="h6"
+                      sx={{ fontFamily: 'Teachers', fontWeight: 600, color: '#3D3D3D' }}
+                    >
+                      {achievement.title}
+                    </Typography>
+                  }
+                  secondary={
+                    <Typography
+                      sx={{
+                        fontFamily: 'Teachers',
+                        color: '#4F4F4F',
+                        fontSize: '16px',
+                        lineHeight: '24px',
+                      }}
+                    >
+                      {achievement.description}
+                    </Typography>
+                  }
                 />
               </ListItem>
             ))}

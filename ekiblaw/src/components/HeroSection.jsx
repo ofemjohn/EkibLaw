@@ -1,6 +1,8 @@
+import React from 'react';
 import { Box, Typography, Button, Grid } from '@mui/material';
 import Navbar from './Navbar';
-import { HashLink as Link } from "react-router-hash-link"; // Import HashLink
+import { HashLink as Link } from "react-router-hash-link";
+import EKIB1 from '../assets/EKIB1.jpg';
 
 const HeroSection = () => {
   return (
@@ -26,7 +28,7 @@ const HeroSection = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '20px',
-                textAlign: { xs: 'center', md: 'left' }, // Center text on smaller screens
+                textAlign: { xs: 'center', md: 'left' },
               }}
             >
               <Typography
@@ -35,6 +37,7 @@ const HeroSection = () => {
                   fontSize: { xs: '32px', md: '56px' },
                   fontWeight: 600,
                   color: 'rgba(210, 210, 210, 1)',
+                  fontFamily: 'Teachers',
                 }}
               >
                 Your Trusted Legal Partners in Atlanta
@@ -43,11 +46,12 @@ const HeroSection = () => {
                 sx={{
                   fontSize: { xs: '16px', md: '20px' },
                   color: 'rgba(210, 210, 210, 1)',
+                  fontFamily: 'Teachers',
                 }}
               >
-                Providing expert legal counsel in personal injury, family <br></br> law, and corporate disputes.
+                Providing expert legal counsel in personal injury, family <br /> law, and corporate disputes.
               </Typography>
-              <Link smooth to="#contact" style={{ textDecoration: 'none' }}> {/* Link to Contact Section */}
+              <Link smooth to="#contact" style={{ textDecoration: 'none' }}>
                 <Button
                   variant="contained"
                   sx={{
@@ -58,7 +62,8 @@ const HeroSection = () => {
                     },
                     width: '245px',
                     height: '72px',
-                    alignSelf: { xs: 'center', md: 'flex-start' }, // Center button on smaller screens
+                    alignSelf: { xs: 'center', md: 'flex-start' },
+                    fontFamily: 'Teachers',
                   }}
                 >
                   Get A Consultation
@@ -72,16 +77,21 @@ const HeroSection = () => {
             <Box
               sx={{
                 display: 'flex',
-                justifyContent: { xs: 'center', md: 'flex-end' }, // Center image on smaller screens
-                height: '100%', // Ensure it stretches to match the text section
+                justifyContent: { xs: 'center', md: 'flex-end' },
+                height: '100%',
               }}
             >
               <Box
                 component="img"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee9666bf002542dfba69ef240eb322c6fb153d4e27c5186f7c8604e03215cadb"
+                src={EKIB1}
                 alt="Hero Image"
                 sx={{
-                  width: '100%',
+                  width: '570px',
+                  height: '570px',
+                  objectFit: 'cover',
+                  borderRadius: '360px 360px 0px 0px',
+                  opacity: 1,
+                  boxShadow: '0 0 15px 10px rgba(0, 0, 0, 0.2)',
                 }}
               />
             </Box>

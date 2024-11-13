@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button, Grid } from "@mui/material";
 import AboutNav from "./AboutNav";
+import EKIB2 from "../assets/EKIB2.jpg";
 
 const AboutHeroSection = () => {
   const handleConsultationClick = () => {
@@ -40,6 +41,7 @@ const AboutHeroSection = () => {
                 sx={{
                   fontSize: "30px",
                   color: "rgba(210, 210, 210, 1)",
+                  fontFamily: 'Teachers', // Apply custom font
                 }}
               >
                 Get To Know
@@ -50,9 +52,10 @@ const AboutHeroSection = () => {
                   fontSize: "56px",
                   fontWeight: 600,
                   color: "rgba(210, 210, 210, 1)",
+                  fontFamily: 'Teachers', // Apply custom font
                 }}
               >
-                Jane Doe
+                Ekib Ekure
               </Typography>
               <Typography
                 sx={{
@@ -61,6 +64,7 @@ const AboutHeroSection = () => {
                   fontWeight: 500,
                   lineHeight: "30px",
                   color: "rgba(210, 210, 210, 1)",
+                  fontFamily: 'Teachers', // Apply custom font
                 }}
               >
                 Esq.
@@ -77,6 +81,7 @@ const AboutHeroSection = () => {
                   width: "245px",
                   height: "72px",
                   alignSelf: { xs: "center", md: "flex-start" },
+                  fontFamily: 'Teachers', // Apply custom font to button text
                 }}
               >
                 Get A Consultation
@@ -95,12 +100,15 @@ const AboutHeroSection = () => {
             >
               <Box
                 component="img"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/bb19efdff6e2c3d1cfed864faa6f3ca0ac5479a72a517d333ae8dcfbdbb78b89?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e"
-                alt="Profile picture"
+                src={EKIB2}
+                alt="Ekib Ekure"
                 loading="lazy"
                 sx={{
-                  width: '100%',
-                  borderRadius: '180px 0 0 0',
+                  width: { xs: '400px', sm: '500px', md: '600px' },
+                  height: { xs: '400px', sm: '450px', md: '500px' },
+                  borderRadius: '180px 0px 0px 0px', // Applied the specified top-right radius
+                  objectFit: 'cover',
+                  boxShadow: '0 0 1px 1px rgba(255, 255, 255, 0.8)',
                 }}
               />
             </Box>

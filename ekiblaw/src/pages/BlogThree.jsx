@@ -1,9 +1,11 @@
 import React from 'react';
-import { Box, Typography, Grid } from '@mui/material';
-import AboutNav from '../components/AboutNav'; // Import your Navbar component
+import { Box, Typography, Grid, Link } from '@mui/material';
+import AboutNav from '../components/AboutNav';
 import BlogPost from '../components/BlogPost';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import solicitor from "../assets/solicitor.webp";
+
 
 const BlogThree = () => {
   return (
@@ -11,18 +13,18 @@ const BlogThree = () => {
       {/* Hero Section with Background Image */}
       <Box
         sx={{
-          backgroundImage: `url(https://cdn.builder.io/api/v1/image/assets/TEMP/7ddac9cd411389d8138da087224da6da6a1dc6214188c635d2f61f4102076279?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e)`,
+          backgroundImage: `url(${solicitor})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: { xs: '20px', md: '45px 70px' },
-          minHeight: '500px', // Adjust as needed
+          minHeight: '500px',
           display: 'flex',
           flexDirection: 'column',
           position: 'relative',
           zIndex: 1,
         }}
       >
-        <AboutNav /> {/* Your Navbar component */}
+        <AboutNav />
       </Box>
 
       {/* Content Section */}
@@ -30,46 +32,60 @@ const BlogThree = () => {
         sx={{
           backgroundColor: '#FFFFFF',
           padding: { xs: '20px', md: '45px 70px' },
-          boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)', // Add a subtle shadow for depth
-          borderRadius: '8px', // Slightly round corners
-          margin: { xs: '20px', md: '40px' }, // Add margin to separate from the edges
+          boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)',
+          borderRadius: '8px',
+          margin: { xs: '20px', md: '40px' },
         }}
       >
         <Grid container spacing={4}>
           <Grid item xs={12}>
             <Typography variant="h4" fontWeight={600} sx={{ color: '#3D3D3D', marginBottom: 2 }}>
-              Navigating Property Acquisition: Legal Essentials for a Smooth Purchase
+              Solicitor Involved in False PI Claim Loses Strike-Off Appeal
             </Typography>
             <Typography variant="h5" sx={{ color: '#447F6D', marginBottom: 2 }}>
-              Power of Attorney, Property
+              Legal Ethics, Personal Injury, Fraud
             </Typography>
             <Typography variant="body1" sx={{ color: '#4F4F4F', marginBottom: 3, lineHeight: '1.6' }}>
-              Acquiring property is a major milestone, but it can also be a complex legal process. Whether you’re a first-time homebuyer or a seasoned investor, understanding the legalities involved is crucial to avoid costly mistakes.
+              A solicitor who made a fraudulent claim for personal injury compensation was rightly struck off, the High Court has ruled. In the case of <strong>Abbas v Solicitors’ Regulatory Authority</strong>, Mrs. Justice McGowan DBE concluded that a permanent ban for Farrukh Abbas was ‘entirely justified’ given the nature of the dishonesty he showed.
             </Typography>
+
             <Typography variant="h6" sx={{ color: '#3D3D3D', marginTop: '20px' }}>
-              Key Steps in Property Acquisition
-            </Typography>
-            <ul style={{ paddingLeft: '20px' }}>
-              <li style={{ marginBottom: '10px' }}>Title Search – Before purchasing, it’s essential to verify the property’s ownership history. A thorough title search ensures there are no hidden claims or legal disputes that could affect your purchase.</li>
-              <li style={{ marginBottom: '10px' }}>Property Inspection – Conducting a proper inspection can help uncover structural or legal issues tied to the property, ensuring you're making an informed decision.</li>
-              <li style={{ marginBottom: '10px' }}>Drafting Contracts – The purchase agreement outlines the terms of the transaction. It’s critical to have a lawyer review or draft these contracts to protect your rights and interests.</li>
-              <li style={{ marginBottom: '10px' }}>Compliance with Local Laws – Property laws vary by location. From zoning regulations to tax obligations, staying compliant with local laws is key to avoiding future legal complications.</li>
-            </ul>
-            <Typography variant="h6" sx={{ color: '#3D3D3D', marginTop: '20px' }}>
-              Why You Need a Lawyer?
+              Case Overview
             </Typography>
             <Typography variant="body1" sx={{ color: '#4F4F4F', lineHeight: '1.6' }}>
-              Working with an experienced property lawyer helps streamline the acquisition process, providing guidance on contract negotiations, title searches, and closing procedures. At Vanguard Law Firm, we’re dedicated to safeguarding your investment and ensuring your property purchase is secure and legally sound.
+              Farrukh Abbas, admitted in 2014, was involved in a minor car accident with an uninsured colleague. Despite no serious physical injury, Abbas instructed Prime Law Solicitors to represent him in a personal injury (PI) claim. Abbas falsely claimed to have been the driver and provided misleading information to the medical expert involved in the case.
             </Typography>
+            <Typography variant="body1" sx={{ color: '#4F4F4F', marginBottom: 3, lineHeight: '1.6' }}>
+              The claim was not pursued and was reported to the Solicitors Regulation Authority by the Insurance Fraud Bureau. The Solicitors Disciplinary Tribunal found three allegations of dishonesty proved and ordered Abbas to be struck off the roll, citing his full and knowing involvement in the deception for personal financial gain.
+            </Typography>
+
+            <Typography variant="h6" sx={{ color: '#3D3D3D', marginTop: '20px' }}>
+              Court's Ruling
+            </Typography>
+            <Typography variant="body1" sx={{ color: '#4F4F4F', lineHeight: '1.6' }}>
+              On appeal, Abbas argued that the tribunal erred in not finding exceptional circumstances in his case. He claimed to be a secondary party in the incident and cited personal and family medical issues as mitigating factors. However, the judge ruled that Abbas had knowingly participated in the deception for nine months, and his involvement was substantial.
+            </Typography>
+            <Typography variant="body1" sx={{ color: '#4F4F4F', lineHeight: '1.6' }}>
+              Mrs. Justice McGowan stated, “This was a clear case of a systematic attempt to defraud an insurance company by a false and dishonest claim. The necessary elements of a criminal offence were established, and the appellant, along with others, was fortunate not to have been prosecuted.”
+            </Typography>
+
+            <Typography variant="h6" sx={{ color: '#3D3D3D', marginTop: '20px' }}>
+              Public Confidence and Legal Profession
+            </Typography>
+            <Typography variant="body1" sx={{ color: '#4F4F4F', lineHeight: '1.6' }}>
+              The judge emphasized that public confidence in the legal profession was damaged by Abbas’s conduct. She noted that the need for public trust in the profession would be further compromised if the sanctions did not reflect the seriousness of his actions.
+            </Typography>
+
             <Typography variant="body1" sx={{ color: '#4F4F4F', fontWeight: 'bold', marginTop: '20px' }}>
-              Ready to acquire property with confidence? Contact us today to guide you through every step of the process.
+              For the full article, visit: <Link href="https://www.lawgazette.co.uk/news/solicitor-involved-in-false-pi-claim-loses-strike-off-appeal/5121457.article" target="_blank" rel="noopener noreferrer" sx={{ color: '#447F6D', textDecoration: 'underline' }}>Law Gazette</Link>
             </Typography>
           </Grid>
         </Grid>
-        {/* BlogPost Section */}
-      <BlogPost />
 
+        {/* BlogPost Section */}
+        <BlogPost />
       </Box>
+
       {/* Contact Section */}
       <ContactSection />
 
@@ -77,6 +93,6 @@ const BlogThree = () => {
       <Footer />
     </>
   );
-}
+};
 
 export default BlogThree;

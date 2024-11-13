@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Typography, Grid } from '@mui/material';
-import AboutNav from '../components/AboutNav'; // Import your Navbar component
+import { Box, Typography, Grid, Link } from '@mui/material';
+import AboutNav from '../components/AboutNav';
 import BlogPost from '../components/BlogPost';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
@@ -15,14 +15,14 @@ const BlogOne = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: { xs: '20px', md: '45px 70px' },
-          minHeight: '500px', // Adjust as needed
+          minHeight: '500px',
           display: 'flex',
           flexDirection: 'column',
           position: 'relative',
           zIndex: 1,
         }}
       >
-        <AboutNav /> {/* Your Navbar component */}
+        <AboutNav />
       </Box>
 
       {/* Content Section */}
@@ -30,46 +30,50 @@ const BlogOne = () => {
         sx={{
           backgroundColor: '#FFFFFF',
           padding: { xs: '20px', md: '45px 70px' },
-          boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)', // Add a subtle shadow for depth
-          borderRadius: '8px', // Slightly round corners
-          margin: { xs: '20px', md: '40px' }, // Add margin to separate from the edges
+          boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)',
+          borderRadius: '8px',
+          margin: { xs: '20px', md: '40px' },
         }}
       >
         <Grid container spacing={4}>
           <Grid item xs={12}>
             <Typography variant="h4" fontWeight={600} sx={{ color: '#3D3D3D', marginBottom: 2 }}>
-              Navigating Property Acquisition: Legal Essentials for a Smooth Purchase
+              Reframing the Indigent Defense Crisis
             </Typography>
             <Typography variant="h5" sx={{ color: '#447F6D', marginBottom: 2 }}>
-              Power of Attorney, Property
+              Criminal Law, Indigent Defense
             </Typography>
             <Typography variant="body1" sx={{ color: '#4F4F4F', marginBottom: 3, lineHeight: '1.6' }}>
-              Acquiring property is a major milestone, but it can also be a complex legal process. Whether you’re a first-time homebuyer or a seasoned investor, understanding the legalities involved is crucial to avoid costly mistakes.
+              Today marks the 60th anniversary of Gideon v. Wainwright, the Supreme Court’s landmark decision on the right to counsel. Despite the recognition that “lawyers in criminal courts are necessities, not luxuries,” the failure to provide adequate representation to defendants in our criminal courts remains a national crisis.
             </Typography>
+
             <Typography variant="h6" sx={{ color: '#3D3D3D', marginTop: '20px' }}>
-              Key Steps in Property Acquisition
+              The Indigent Defense Crisis
             </Typography>
             <ul style={{ paddingLeft: '20px' }}>
-              <li style={{ marginBottom: '10px' }}>Title Search – Before purchasing, it’s essential to verify the property’s ownership history. A thorough title search ensures there are no hidden claims or legal disputes that could affect your purchase.</li>
-              <li style={{ marginBottom: '10px' }}>Property Inspection – Conducting a proper inspection can help uncover structural or legal issues tied to the property, ensuring you're making an informed decision.</li>
-              <li style={{ marginBottom: '10px' }}>Drafting Contracts – The purchase agreement outlines the terms of the transaction. It’s critical to have a lawyer review or draft these contracts to protect your rights and interests.</li>
-              <li style={{ marginBottom: '10px' }}>Compliance with Local Laws – Property laws vary by location. From zoning regulations to tax obligations, staying compliant with local laws is key to avoiding future legal complications.</li>
+              <li style={{ marginBottom: '10px' }}>Criminal cases account for a large percentage of state court filings, and in most of these cases, the accused cannot afford counsel.</li>
+              <li style={{ marginBottom: '10px' }}>Reports have documented systemic failures in indigent defense across multiple states, highlighting the ongoing violation of the right to counsel.</li>
+              <li style={{ marginBottom: '10px' }}>The American Bar Association’s workload studies show that public defenders are overwhelmed, requiring a doubling of current staffing levels to provide adequate representation.</li>
+              <li style={{ marginBottom: '10px' }}>Funding for indigent defense has lagged behind, while investment in the prison industrial complex has grown rapidly, exacerbating the crisis.</li>
             </ul>
+
             <Typography variant="h6" sx={{ color: '#3D3D3D', marginTop: '20px' }}>
-              Why You Need a Lawyer?
+              A Call for Reform
             </Typography>
             <Typography variant="body1" sx={{ color: '#4F4F4F', lineHeight: '1.6' }}>
-              Working with an experienced property lawyer helps streamline the acquisition process, providing guidance on contract negotiations, title searches, and closing procedures. At Vanguard Law Firm, we’re dedicated to safeguarding your investment and ensuring your property purchase is secure and legally sound.
+              The failure to adequately fund indigent defense systems has led to ineffective assistance of counsel for the majority of defendants. This crisis challenges the legitimacy of our justice system and undermines the constitutional right to counsel. Reform is needed to address the disparity between the volume of criminal cases and the availability of qualified public defenders.
             </Typography>
+
             <Typography variant="body1" sx={{ color: '#4F4F4F', fontWeight: 'bold', marginTop: '20px' }}>
-              Ready to acquire property with confidence? Contact us today to guide you through every step of the process.
+              Read the full essay for a comprehensive analysis and proposed solutions to the indigent defense crisis. Access the full essay <Link href="https://harvardlawreview.org/blog/2023/03/reframing-the-indigent-defense-crisis/" target="_blank" rel="noopener noreferrer" sx={{ color: '#447F6D', textDecoration: 'underline' }}>here</Link>.
             </Typography>
           </Grid>
         </Grid>
-        {/* BlogPost Section */}
-      <BlogPost />
 
+        {/* BlogPost Section */}
+        <BlogPost />
       </Box>
+
       {/* Contact Section */}
       <ContactSection />
 
@@ -77,6 +81,6 @@ const BlogOne = () => {
       <Footer />
     </>
   );
-}
+};
 
 export default BlogOne;

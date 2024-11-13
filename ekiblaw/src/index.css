@@ -10,7 +10,94 @@ body, html {
   overflow-y: auto;
 }
 
+/* Apply Teachers font as the default font */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Teachers', Arial, sans-serif;
   background-color: #f8f8f8; /* Adjust according to your app's needs */
+}
+
+/* Variable Font */
+@font-face {
+  font-family: 'Teachers';
+  src: url('./fonts/Teachers-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Teachers';
+  src: url('./fonts/Teachers-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+/* Static Fonts */
+@font-face {
+  font-family: 'Teachers';
+  src: url('./fonts/Teachers-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Teachers';
+  src: url('./fonts/Teachers-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Teachers';
+  src: url('./fonts/Teachers-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Teachers';
+  src: url('./fonts/Teachers-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Teachers';
+  src: url('./fonts/Teachers-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Teachers';
+  src: url('./fonts/Teachers-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Teachers';
+  src: url('./fonts/Teachers-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Teachers';
+  src: url('./fonts/Teachers-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Teachers';
+  src: url('./fonts/Teachers-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Teachers';
+  src: url('./fonts/Teachers-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
 }

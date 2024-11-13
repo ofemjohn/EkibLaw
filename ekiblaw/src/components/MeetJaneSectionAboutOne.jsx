@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Typography, Divider, Grid, CardMedia } from '@mui/material';
+import { Box, Typography, Divider, Grid } from '@mui/material';
+import EKIB10 from '../assets/EKIB10.jpg';
 
 const MeetJaneSectionAboutOne = () => {
   return (
@@ -8,21 +9,30 @@ const MeetJaneSectionAboutOne = () => {
       <Grid item xs={12} md={6}>
         <Box
           sx={{
-            width: '100%',
-            height: { xs: 'auto', md: '448px' },
-            borderRadius: '4px',
+            backgroundColor: '#333333',
+            borderRadius: '8px',
+            display: 'flex',
+            justifyContent: 'center',
+            padding: 2,
+            position: 'relative',
+            height: '80%',
             overflow: 'hidden',
           }}
         >
-          <CardMedia
+          <Box
             component="img"
+            src={EKIB10}
+            alt="Ekib Ekure, Esq"
             loading="lazy"
-            image="https://cdn.builder.io/api/v1/image/assets/TEMP/e996f34e13ed14088c4f4ac40589a8ad45d34c30ae6f9fe70c035f1db2aef9de"
-            alt="Jane Doe, Esq"
             sx={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'fill',
+              width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "8px",
+                position: "relative",
+                zIndex: 2,
+                top: 25,
+                left: 20,
             }}
           />
         </Box>
@@ -43,12 +53,20 @@ const MeetJaneSectionAboutOne = () => {
               orientation="vertical"
               sx={{ height: { xs: 40, md: 58 }, backgroundColor: '#447F6D', width: '5px' }}
             />
-            <Typography variant="h4" sx={{ fontWeight: 700, color: 'rgba(61, 61, 61, 1)' }}>
-              Meet Jane Doe, Esq
+            <Typography
+              variant="h4"
+              sx={{
+                fontFamily: 'Teachers',
+                fontWeight: 700,
+                color: 'rgba(61, 61, 61, 1)',
+              }}
+            >
+              Meet Our Attorney
             </Typography>
           </Box>
           <Typography
             sx={{
+              fontFamily: 'Teachers',
               color: 'rgba(79, 79, 79, 1)',
               lineHeight: { xs: '28px', md: '32px' },
               fontSize: { xs: '16px', md: '20px' },
@@ -56,10 +74,15 @@ const MeetJaneSectionAboutOne = () => {
               textAlign: 'justify',
             }}
           >
-            Jane Doe, Esq. is a highly experienced attorney with over 12 years in both litigation and transactional law, representing individuals, businesses, and corporations. Known for her dedication to excellence, Jane provides practical, results-driven solutions in areas such as civil litigation, business law, estate planning, employment law, and real estate. She is skilled in both litigation and alternative dispute resolution, like mediation, delivering positive outcomes.
+            Ekib Ekure is the founder and Managing Attorney at Ekib Ekure Law LLC. She is an experienced trial attorney who has always fought for the rights of the people.
+
+            Her fight for the people began at a young age. As a child, she was regularly called upon by her friends to “defend them” when parents accused them of wrongdoing. The saying was “if we talk, we will get in trouble but if Ekib talks for us, we won’t get into trouble.” What she did not know was that this little exercise in trouble avoidance was preparing her for a career as a defense attorney. She’s not afraid to fight for you.
+
+            Ekib started her career as a Public Defender where she represented hundreds of indigent clients in various cases from traffic violations to serious felonies. Her zeal for advocacy led to a stellar trial record and effective plea deals. Her approach to each case is practical and realistic. She understands that each case is different, so her goal is to always put the client in the best possible position based on the facts of their case.
+
+            Ekib was born in Nigeria but grew up in Columbia, South Carolina. She spent her formative years in South Carolina where she graduated from the University of South Carolina with a degree in African American Studies with a minor in Political Science. She completed her legal education at North Carolina Central University where she graduated Cum Laude with a host of other honors and awards. She further continued her legal education by seeking a second law degree from the Nigeria Law School where she also graduated with high honors. In her spare time, Ekib enjoys volunteering with her church, finding new restaurants in Atlanta, and traveling the world.
           </Typography>
         </Box>
-        {/* Read more button removed */}
       </Grid>
     </Grid>
   );

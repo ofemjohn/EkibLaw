@@ -2,34 +2,42 @@ import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { Box, Typography, Divider, Card, CardMedia, CardContent, Link, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import businesslaw from "../assets/businesslaw.avif";
+import personalinjury from "../assets/personalinjury.avif";
+import politicalgovernance from "../assets/politicalgovernance.webp";
+import solicitor from "../assets/solicitor.webp";
+
+
+
+
 
 const blogPosts = [
   {
     image: "https://cdn.builder.io/api/v1/image/assets/TEMP/7ddac9cd411389d8138da087224da6da6a1dc6214188c635d2f61f4102076279?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e",
-    title: "Power of Attorney",
-    content: "Acquiring property is a major milestone, but it can also be a complex legal process.",
+    title: "Criminal Law",
+    content: "Today marks the 60th anniversary of Gideon v. Wainwright, the Supreme Court’s landmark decision on the right to counsel.",
     route: "/blogone",
   },
   {
-    image: "https://cdn.builder.io/api/v1/image/assets/TEMP/f05e6c3e8c55f9741c64b07f7b91f71e52824484389e246d0bc4f9200210f9db?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e",
-    title: "Family Law",
-    content: "Separation doesn't stop you from your parental responsibilities. Follow our guides to be in the lives of your children.",
+    image: politicalgovernance,
+    title: "The New Corporate Political Governance",
+    content: "Governance matters. The governance of our business and political institutions impacts all aspects of our lives.",
     route: "/blogtwo",
   },
   {
-    image: "https://cdn.builder.io/api/v1/image/assets/TEMP/a9b6933f810c34b9aadb8d1b1ff0bdc7eeeccffccb5c32aac28ed1764fbb67c4?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e",
-    title: "Pro Bono",
-    content: "Read more on our campus tour, and how we encourage young minds towards a noble cause.",
+    image: solicitor,
+    title: "Solicitor involved in false PI claim loses strike-off appeal",
+    content: "A solicitor who made a fraudulent claim for personal injury compensation was rightly struck off, the High Court has ruled.",
     route: "/blogthree",
   },
   {
-    image: "https://cdn.builder.io/api/v1/image/assets/TEMP/7ddac9cd411389d8138da087224da6da6a1dc6214188c635d2f61f4102076279?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e",
-    title: "Real Estate Law",
-    content: "Navigating property transactions made simple and secure. Let our experts guide you.",
+    image: personalinjury,
+    title: "Court rules that claims survive despite personal injury dishonesty",
+    content: "The courts have served up further signs that lying on a personal injury claim is not to be treated as the death knell for other heads of loss.",
     route: "/blogfour",
   },
   {
-    image: "https://cdn.builder.io/api/v1/image/assets/TEMP/f05e6c3e8c55f9741c64b07f7b91f71e52824484389e246d0bc4f9200210f9db?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e",
+    image: businesslaw,
     title: "Corporate Law",
     content: "Understanding corporate law essentials for better decision-making in your business.",
     route: "/blogfive",
@@ -102,7 +110,7 @@ const BlogSection = () => {
       {/* Blog Post Carousel */}
       <Carousel
         navButtonsAlwaysVisible
-        interval={3000}
+        interval={4000}
         indicators={true}
         animation="slide"
         autoPlay={true}

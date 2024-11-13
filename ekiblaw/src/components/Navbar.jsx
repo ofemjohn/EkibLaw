@@ -1,32 +1,18 @@
 import React, { useState } from 'react';
-import { Box, Typography, IconButton, Drawer, List, ListItemButton, ListItemText, Menu, MenuItem, Button } from '@mui/material';
+import { Box, IconButton, Drawer, List, ListItemButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useMediaQuery } from '@mui/material';
 import { HashLink as Link } from "react-router-hash-link";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [language, setLanguage] = useState('EN');
   const isMobile = useMediaQuery('(max-width: 600px)');
+  const isTablet = useMediaQuery('(max-width: 900px)');
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
-  };
-
-  const handleLanguageMenuClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleLanguageMenuClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleLanguageChange = (language) => {
-    setLanguage(language === 'English' ? 'EN' : 'ES');
-    handleLanguageMenuClose();
   };
 
   return (
@@ -41,11 +27,25 @@ const Navbar = () => {
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         flexDirection: isMobile ? 'column' : 'row',
         marginTop: '40px',
+        overflow: 'hidden', // Prevent logo overflow
       }}
     >
-      <Typography variant="h5" sx={{ fontWeight: 700, color: '#FFF' }}>
-        Vanguard Law Firm
-      </Typography>
+      {/* Logo Image */}
+      <Box
+        component="img"
+        src={logo}
+        alt="Vanguard Law Firm Logo"
+        sx={{
+          height: '50px',
+          width: 'auto',
+          cursor: 'pointer',
+          transform: isMobile ? 'scale(4.5)' : isTablet ? 'scale(4)' : 'scale(5.3)',
+          transformOrigin: 'left center', // Expand to the right
+          filter: 'drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3)) contrast(200%)',
+          marginRight: '250px', // Add space between the logo and the links
+          paddingLeft: '0px', // Remove left padding
+        }}
+      />
 
       {isMobile ? (
         <>
@@ -54,126 +54,38 @@ const Navbar = () => {
           </IconButton>
           <Drawer anchor="top" open={drawerOpen} onClose={handleDrawerToggle}>
             <List sx={{ width: '100%', backgroundColor: '#1E1E1E', color: '#FFF' }}>
-              <ListItemButton onClick={() => setDrawerOpen(false)}>
-                <Link smooth to="#home" onClick={() => setActiveLink('home')} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  Home
-                </Link>
-              </ListItemButton>
-              <ListItemButton onClick={() => setDrawerOpen(false)}>
-                <Link smooth to="#about-us" onClick={() => setActiveLink('about us')} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  About Us
-                </Link>
-              </ListItemButton>
-              <ListItemButton onClick={() => setDrawerOpen(false)}>
-                <Link smooth to="#services" onClick={() => setActiveLink('services')} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  Services
-                </Link>
-              </ListItemButton>
-              <ListItemButton onClick={() => setDrawerOpen(false)}>
-                <Link smooth to="#blog" onClick={() => setActiveLink('blog')} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  Blog
-                </Link>
-              </ListItemButton>
-              <ListItemButton onClick={() => setDrawerOpen(false)}>
-                <Link smooth to="#contact" onClick={() => setActiveLink('contact us')} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  Contact Us
-                </Link>
-              </ListItemButton>
-              <ListItemButton onClick={handleLanguageMenuClick} sx={{ justifyContent: 'center' }}>
-                <ListItemText
-                  primary={
-                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      {language} <ArrowDropDownIcon />
-                    </Box>
-                  }
-                  sx={{ textAlign: 'center' }}
-                />
-              </ListItemButton>
+              {['Home', 'About Us', 'Services', 'Blog', 'Contact Us'].map((text, index) => (
+                <ListItemButton key={index} onClick={() => setDrawerOpen(false)}>
+                  <Link
+                    smooth
+                    to={`#${text.toLowerCase().replace(' ', '-')}`}
+                    onClick={() => setActiveLink(text.toLowerCase())}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                    {text}
+                  </Link>
+                </ListItemButton>
+              ))}
             </List>
-            <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleLanguageMenuClose}>
-              <MenuItem onClick={() => handleLanguageChange('English')}>English</MenuItem>
-              <MenuItem onClick={() => handleLanguageChange('Spanish')}>Spanish</MenuItem>
-            </Menu>
           </Drawer>
         </>
       ) : (
         <Box sx={{ display: 'flex', gap: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
-          <Link
-            smooth
-            to="#home"
-            onClick={() => setActiveLink('home')}
-            style={{
-              textDecoration: 'none',
-              color: activeLink === 'home' ? '#D8B482' : '#FFF',
-              borderBottom: activeLink === 'home' ? '3px solid #D8B482' : 'none',
-            }}
-          >
-            Home
-          </Link>
-          <Link
-            smooth
-            to="#about-us"
-            onClick={() => setActiveLink('about us')}
-            style={{
-              textDecoration: 'none',
-              color: activeLink === 'about us' ? '#D8B482' : '#FFF',
-              borderBottom: activeLink === 'about us' ? '3px solid #D8B482' : 'none',
-            }}
-          >
-            About Us
-          </Link>
-          <Link
-            smooth
-            to="#services"
-            onClick={() => setActiveLink('services')}
-            style={{
-              textDecoration: 'none',
-              color: activeLink === 'services' ? '#D8B482' : '#FFF',
-              borderBottom: activeLink === 'services' ? '3px solid #D8B482' : 'none',
-            }}
-          >
-            Services
-          </Link>
-          <Link
-            smooth
-            to="#blog"
-            onClick={() => setActiveLink('blog')}
-            style={{
-              textDecoration: 'none',
-              color: activeLink === 'blog' ? '#D8B482' : '#FFF',
-              borderBottom: activeLink === 'blog' ? '3px solid #D8B482' : 'none',
-            }}
-          >
-            Blog
-          </Link>
-          <Link
-            smooth
-            to="#contact"
-            onClick={() => setActiveLink('contact us')}
-            style={{
-              textDecoration: 'none',
-              color: activeLink === 'contact us' ? '#D8B482' : '#FFF',
-              borderBottom: activeLink === 'contact us' ? '3px solid #D8B482' : 'none',
-            }}
-          >
-            Contact Us
-          </Link>
-          <Button
-            color="inherit"
-            endIcon={<ArrowDropDownIcon />}
-            onClick={handleLanguageMenuClick}
-            sx={{
-              color: '#FFF',
-              textTransform: 'none',
-              '&:hover': { color: '#D8B482' },
-            }}
-          >
-            {language}
-          </Button>
-          <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleLanguageMenuClose}>
-            <MenuItem onClick={() => handleLanguageChange('English')}>English</MenuItem>
-            <MenuItem onClick={() => handleLanguageChange('Spanish')}>Spanish</MenuItem>
-          </Menu>
+          {['Home', 'About Us', 'Services', 'Blog', 'Contact Us'].map((text, index) => (
+            <Link
+              key={index}
+              smooth
+              to={`#${text.toLowerCase().replace(' ', '-')}`}
+              onClick={() => setActiveLink(text.toLowerCase())}
+              style={{
+                textDecoration: 'none',
+                color: activeLink === text.toLowerCase() ? '#D8B482' : '#FFF',
+                borderBottom: activeLink === text.toLowerCase() ? '3px solid #D8B482' : 'none',
+              }}
+            >
+              {text}
+            </Link>
+          ))}
         </Box>
       )}
     </Box>

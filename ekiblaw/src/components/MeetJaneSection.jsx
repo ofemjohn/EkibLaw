@@ -1,39 +1,48 @@
-import { Box, Typography, Button, Divider, Grid, CardMedia } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { Box, Typography, Button, Divider, Grid } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import EKIB9 from '../assets/EKIB9.jpg';
 
 const MeetJaneSection = () => {
   const navigate = useNavigate();
 
   const handleReadMoreClick = () => {
-    console.log('Navigating to About page');
-    navigate('/about'); // Navigate to the about page
-    window.setTimeout(() => { // Wait for navigation to complete before scrolling
-      document.documentElement.scrollTop = 0; // For most browsers
-      document.body.scrollTop = 0; // For Safari
-    }, 100); // Adjust timeout as necessary
+    navigate('/about');
+    window.setTimeout(() => {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 100);
   };
 
   return (
-    <Grid container spacing={12} alignItems="stretch" sx={{ marginBottom: '50px' }}>
+    <Grid container spacing={6} alignItems="stretch" sx={{ marginBottom: '50px', position: 'relative', overflow: 'hidden' }}>
       {/* Image Section */}
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-start' }, overflow: 'hidden' }}>
         <Box
           sx={{
-            width: '100%',
-            height: { xs: 'auto', md: '448px' },
-            borderRadius: '4px',
+            position: 'relative',
+            width: { xs: '100%', md: '500px' },
+            height: { xs: '350px', md: '600px' },
+            marginLeft: { xs: 0, md: '41px' },
+            backgroundColor: '#D8B482',
+            borderRadius: '4px 0px 0px 0px',
+            // boxShadow: '0 0 30px 10px rgba(0, 0, 0, 0.2)',
             overflow: 'hidden',
           }}
         >
-          <CardMedia
+          <Box
             component="img"
+            src={EKIB9}
+            alt="Ekib Ekure, Esq"
             loading="lazy"
-            image="https://cdn.builder.io/api/v1/image/assets/TEMP/e996f34e13ed14088c4f4ac40589a8ad45d34c30ae6f9fe70c035f1db2aef9de"
-            alt="Jane Doe, Esq"
             sx={{
-              width: '100%',
+              position: 'absolute',
+              top: { xs: '-10px', md: '-25px' }, // Responsive top offset
+              left: { xs: '10px', md: '30px' }, // Responsive left offset
+              width: { xs: '90%', md: '100%' },
               height: '100%',
-              objectFit: 'fill',
+              objectFit: 'cover',
+              borderRadius: '8px',
+              // boxShadow: '0 0 30px 10px rgba(255, 255, 255, 0.8)',
             }}
           />
         </Box>
@@ -42,32 +51,23 @@ const MeetJaneSection = () => {
       {/* Text Section */}
       <Grid item xs={12} md={6} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 2,
-              fontSize: { xs: '30px', md: '40px' },
-            }}
-          >
-            <Divider
-              orientation="vertical"
-              sx={{ height: { xs: 40, md: 58 }, backgroundColor: '#447F6D', width: '5px' }}
-            />
-            <Typography variant="h4" sx={{ fontWeight: 700, color: 'rgba(61, 61, 61, 1)' }}>
-              Meet Jane Doe, Esq
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, fontSize: { xs: '24px', md: '40px' } }}>
+            <Divider orientation="vertical" sx={{ height: { xs: 30, md: 58 }, backgroundColor: '#447F6D', width: '5px' }} />
+            <Typography variant="h4" sx={{ fontWeight: 700, color: 'rgba(61, 61, 61, 1)', fontFamily: 'Teachers' }}>
+              Meet Ekib Ekure, Esq
             </Typography>
           </Box>
           <Typography
             sx={{
               color: 'rgba(79, 79, 79, 1)',
-              lineHeight: { xs: '28px', md: '32px' },
-              fontSize: { xs: '16px', md: '20px' },
+              lineHeight: { xs: '24px', md: '32px' },
+              fontSize: { xs: '14px', md: '20px' },
               fontWeight: 400,
               textAlign: 'justify',
+              fontFamily: 'Teachers',
             }}
           >
-            Jane Doe, Esq. is a highly experienced attorney with over 12 years in both litigation and transactional law, representing individuals, businesses, and corporations. Known for her dedication to excellence, Jane provides practical, results-driven solutions in areas such as civil litigation, business law, estate planning, employment law, and real estate. She is skilled in both litigation and alternative dispute resolution, like mediation, delivering positive outcomes.
+            Ekib Ekure is the founder and Managing Attorney at Ekib Ekure Law LLC. She is an experienced trial attorney who has always fought for the rights of the people. Her fight for the people began at a young age. As a child, she was regularly called upon by her friends to defend them when parents accused them of wrongdoing. The saying was “if we talk, we will get in trouble but if Ekib talks for us, we won’t get into trouble.” What she did not know was that this little exercise in trouble avoidance was preparing her for a career as a defense attorney.
           </Typography>
         </Box>
         <Button
@@ -79,7 +79,8 @@ const MeetJaneSection = () => {
             fontWeight: 500,
             padding: '10px 32px',
             width: 'fit-content',
-            alignSelf: { xs: 'left', md: 'flex-start' },
+            alignSelf: { xs: 'flex-start', md: 'flex-start' },
+            fontFamily: 'Teachers',
           }}
         >
           Read more

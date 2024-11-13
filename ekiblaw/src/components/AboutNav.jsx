@@ -1,32 +1,18 @@
 import React, { useState } from 'react';
-import { Box, Typography, IconButton, Drawer, List, ListItemButton, ListItemText, Menu, MenuItem, Button } from '@mui/material';
+import { Box, IconButton, Drawer, List, ListItemButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useMediaQuery } from '@mui/material';
 import { HashLink as Link } from "react-router-hash-link";
+import logo from "../assets/logo.png";
 
 const AboutNav = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [language, setLanguage] = useState('EN');
   const isMobile = useMediaQuery('(max-width: 600px)');
+  const isTablet = useMediaQuery('(max-width: 900px)');
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen);
-  };
-
-  const handleLanguageMenuClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleLanguageMenuClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleLanguageChange = (language) => {
-    setLanguage(language === 'English' ? 'EN' : 'ES');
-    handleLanguageMenuClose();
   };
 
   return (
@@ -41,11 +27,25 @@ const AboutNav = () => {
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         flexDirection: isMobile ? 'column' : 'row',
         marginTop: '40px',
+        overflow: 'hidden', // Prevent overflow
       }}
     >
-      <Typography variant="h5" sx={{ fontWeight: 700, color: '#FFF' }}>
-        Vanguard Law Firm
-      </Typography>
+      {/* Logo Image */}
+      <Box
+        component="img"
+        src={logo}
+        alt="Vanguard Law Firm Logo"
+        sx={{
+          height: '50px', // Keep the Navbar height
+          width: 'auto', // Maintain aspect ratio
+          cursor: 'pointer',
+          transform: isMobile ? 'scale(4.5)' : isTablet ? 'scale(4)' : 'scale(5.3)',
+          transformOrigin: 'left center', // Expand to the right
+          filter: 'drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3)) contrast(200%)',
+          marginRight: '250px', // Space between logo and links
+          paddingLeft: '0px', // Remove left padding
+        }}
+      />
 
       {isMobile ? (
         <>
@@ -64,21 +64,7 @@ const AboutNav = () => {
                   Contact Us
                 </Link>
               </ListItemButton>
-              <ListItemButton onClick={handleLanguageMenuClick} sx={{ justifyContent: 'center' }}>
-                <ListItemText
-                  primary={
-                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      {language} <ArrowDropDownIcon />
-                    </Box>
-                  }
-                  sx={{ textAlign: 'center' }}
-                />
-              </ListItemButton>
             </List>
-            <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleLanguageMenuClose}>
-              <MenuItem onClick={() => handleLanguageChange('English')}>English</MenuItem>
-              <MenuItem onClick={() => handleLanguageChange('Spanish')}>Spanish</MenuItem>
-            </Menu>
           </Drawer>
         </>
       ) : (
@@ -106,22 +92,6 @@ const AboutNav = () => {
           >
             Contact Us
           </Link>
-          <Button
-            color="inherit"
-            endIcon={<ArrowDropDownIcon />}
-            onClick={handleLanguageMenuClick}
-            sx={{
-              color: '#FFF',
-              textTransform: 'none',
-              '&:hover': { color: '#D8B482' },
-            }}
-          >
-            {language}
-          </Button>
-          <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleLanguageMenuClose}>
-            <MenuItem onClick={() => handleLanguageChange('English')}>English</MenuItem>
-            <MenuItem onClick={() => handleLanguageChange('Spanish')}>Spanish</MenuItem>
-          </Menu>
         </Box>
       )}
     </Box>

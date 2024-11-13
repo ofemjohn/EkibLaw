@@ -1,9 +1,11 @@
 import React from 'react';
-import { Box, Typography, Grid } from '@mui/material';
+import { Box, Typography, Grid, Link } from '@mui/material';
 import AboutNav from '../components/AboutNav'; // Import your Navbar component
 import BlogPost from '../components/BlogPost';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import politicalgovernance from "../assets/politicalgovernance.webp";
+
 
 const BlogTwo = () => {
   return (
@@ -11,18 +13,18 @@ const BlogTwo = () => {
       {/* Hero Section with Background Image */}
       <Box
         sx={{
-          backgroundImage: `url(https://cdn.builder.io/api/v1/image/assets/TEMP/7ddac9cd411389d8138da087224da6da6a1dc6214188c635d2f61f4102076279?placeholderIfAbsent=true&apiKey=548d97d02f3248759f0eec44133ed12e)`,
+          backgroundImage: `url(${politicalgovernance})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: { xs: '20px', md: '45px 70px' },
-          minHeight: '500px', // Adjust as needed
+          minHeight: '500px',
           display: 'flex',
           flexDirection: 'column',
           position: 'relative',
           zIndex: 1,
         }}
       >
-        <AboutNav /> {/* Your Navbar component */}
+        <AboutNav />
       </Box>
 
       {/* Content Section */}
@@ -30,46 +32,55 @@ const BlogTwo = () => {
         sx={{
           backgroundColor: '#FFFFFF',
           padding: { xs: '20px', md: '45px 70px' },
-          boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)', // Add a subtle shadow for depth
-          borderRadius: '8px', // Slightly round corners
-          margin: { xs: '20px', md: '40px' }, // Add margin to separate from the edges
+          boxShadow: '0px 2px 10px rgba(0, 0, 0, 0.1)',
+          borderRadius: '8px',
+          margin: { xs: '20px', md: '40px' },
         }}
       >
         <Grid container spacing={4}>
           <Grid item xs={12}>
             <Typography variant="h4" fontWeight={600} sx={{ color: '#3D3D3D', marginBottom: 2 }}>
-              Navigating Property Acquisition: Legal Essentials for a Smooth Purchase
+              The New Corporate Political Governance
             </Typography>
             <Typography variant="h5" sx={{ color: '#447F6D', marginBottom: 2 }}>
-              Power of Attorney, Property
+              Corporate Governance, ESG, Social Activism
             </Typography>
             <Typography variant="body1" sx={{ color: '#4F4F4F', marginBottom: 3, lineHeight: '1.6' }}>
-              Acquiring property is a major milestone, but it can also be a complex legal process. Whether you’re a first-time homebuyer or a seasoned investor, understanding the legalities involved is crucial to avoid costly mistakes.
+              Corporate governance and political governance are increasingly intersecting as corporations engage in critical social challenges with their voice, capital, and actions. In a recent article, Tom C.W. Lin examines the convergence of corporate and political governance and its wide-ranging effects on law, politics, business, and society.
             </Typography>
+
             <Typography variant="h6" sx={{ color: '#3D3D3D', marginTop: '20px' }}>
-              Key Steps in Property Acquisition
+              Key Recommendations for Navigating Corporate Political Governance
             </Typography>
             <ul style={{ paddingLeft: '20px' }}>
-              <li style={{ marginBottom: '10px' }}>Title Search – Before purchasing, it’s essential to verify the property’s ownership history. A thorough title search ensures there are no hidden claims or legal disputes that could affect your purchase.</li>
-              <li style={{ marginBottom: '10px' }}>Property Inspection – Conducting a proper inspection can help uncover structural or legal issues tied to the property, ensuring you're making an informed decision.</li>
-              <li style={{ marginBottom: '10px' }}>Drafting Contracts – The purchase agreement outlines the terms of the transaction. It’s critical to have a lawyer review or draft these contracts to protect your rights and interests.</li>
-              <li style={{ marginBottom: '10px' }}>Compliance with Local Laws – Property laws vary by location. From zoning regulations to tax obligations, staying compliant with local laws is key to avoiding future legal complications.</li>
+              <li style={{ marginBottom: '10px' }}>
+                <strong>A Different Corporate Overstory:</strong> Lin proposes a new narrative for businesses as politically active and human-centered entities, shifting away from traditional views focused solely on private profit.
+              </li>
+              <li style={{ marginBottom: '10px' }}>
+                <strong>The AILS Framework:</strong> The framework (Analyze, Internalize, Localize, Specialize) guides corporations in organizing and operationalizing their social efforts effectively.
+              </li>
+              <li style={{ marginBottom: '10px' }}>
+                <strong>Lessons from Delaware and Nevada:</strong> Lin highlights the regulatory approaches of Delaware and Nevada as models for managing corporate political engagements without succumbing to partisan politics.
+              </li>
             </ul>
+
             <Typography variant="h6" sx={{ color: '#3D3D3D', marginTop: '20px' }}>
-              Why You Need a Lawyer?
+              Conclusion
             </Typography>
             <Typography variant="body1" sx={{ color: '#4F4F4F', lineHeight: '1.6' }}>
-              Working with an experienced property lawyer helps streamline the acquisition process, providing guidance on contract negotiations, title searches, and closing procedures. At Vanguard Law Firm, we’re dedicated to safeguarding your investment and ensuring your property purchase is secure and legally sound.
+              Addressing the complexities of corporate political governance will be a significant challenge for political leaders, corporate executives, and citizens. While a perfect roadmap is not yet available, Tom C.W. Lin's recommendations provide a thoughtful approach to navigating the evolving landscape.
             </Typography>
+
             <Typography variant="body1" sx={{ color: '#4F4F4F', fontWeight: 'bold', marginTop: '20px' }}>
-              Ready to acquire property with confidence? Contact us today to guide you through every step of the process.
+              Interested in reading more? Access the full article by Tom C.W. Lin <Link href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4775190" target="_blank" rel="noopener noreferrer" sx={{ color: '#447F6D', textDecoration: 'underline' }}>here</Link>.
             </Typography>
           </Grid>
         </Grid>
-        {/* BlogPost Section */}
-      <BlogPost />
 
+        {/* BlogPost Section */}
+        <BlogPost />
       </Box>
+
       {/* Contact Section */}
       <ContactSection />
 
@@ -77,6 +88,6 @@ const BlogTwo = () => {
       <Footer />
     </>
   );
-}
+};
 
 export default BlogTwo;
