@@ -1,8 +1,9 @@
+// Navbar.jsx
 import React, { useState } from 'react';
 import { Box, IconButton, Drawer, List, ListItemButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useMediaQuery } from '@mui/material';
-import { HashLink as Link } from "react-router-hash-link";
+import { HashLink as Link } from "react-router-hash-link"; // Ensure you import HashLink
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
@@ -58,7 +59,7 @@ const Navbar = () => {
                 <ListItemButton key={index} onClick={() => setDrawerOpen(false)}>
                   <Link
                     smooth
-                    to={`#${text.toLowerCase().replace(' ', '-')}`}
+                    to={`#${text.toLowerCase().replace(' ', '-')}`} // Hash links to respective sections
                     onClick={() => setActiveLink(text.toLowerCase())}
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
@@ -71,11 +72,12 @@ const Navbar = () => {
         </>
       ) : (
         <Box sx={{ display: 'flex', gap: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
+          {/* Desktop View */}
           {['Home', 'About Us', 'Services', 'Blog', 'Contact Us'].map((text, index) => (
             <Link
               key={index}
               smooth
-              to={`#${text.toLowerCase().replace(' ', '-')}`}
+              to={`#${text.toLowerCase().replace(' ', '-')}`} // Hash links to respective sections
               onClick={() => setActiveLink(text.toLowerCase())}
               style={{
                 textDecoration: 'none',

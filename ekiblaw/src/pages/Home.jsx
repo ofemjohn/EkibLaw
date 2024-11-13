@@ -12,7 +12,7 @@ const Home = () => {
         <HeroSection />
       </div>
       <MainSection />
-      <div id="contact">
+      <div id="contact-us">  {/* Ensure this ID matches the link */}
         <ContactSection />
       </div>
       <Footer />

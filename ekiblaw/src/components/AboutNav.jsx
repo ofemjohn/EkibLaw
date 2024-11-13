@@ -82,7 +82,7 @@ const AboutNav = () => {
           </Link>
           <Link
             smooth
-            to="#contact"
+            to="#contacts"
             onClick={() => setActiveLink('contact us')}
             style={{
               textDecoration: 'none',
