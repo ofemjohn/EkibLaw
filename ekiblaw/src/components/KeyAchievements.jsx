@@ -45,20 +45,23 @@ const KeyAchievements = () => {
   return (
     <Box sx={{ padding: 4 }}>
       <Grid container alignItems="center" sx={{ marginBottom: 2 }}>
-        <Grid item>
+        <Grid item xs={12} sm={12} md={12} sx={{ display: 'flex', alignItems: 'center', marginBottom: { xs: 1, md: 2 } }}>
           <Divider
             orientation="vertical"
-            sx={{ height: { xs: 40, md: 58 }, backgroundColor: '#447F6D', width: '5px' }}
+            sx={{
+              height: { xs: 30, md: 58 },
+              backgroundColor: '#447F6D',
+              width: '5px',
+              marginRight: { xs: 2, md: 4 }, // Adjust margin for smaller screens
+            }}
           />
-        </Grid>
-        <Grid item>
           <Typography
             variant="h4"
             sx={{
               fontWeight: 700,
               color: '#3D3D3D',
-              marginLeft: 2,
               fontFamily: 'Teachers',
+              fontSize: { xs: '24px', sm: '28px', md: '36px' }, // Adjust text size for smaller screens
             }}
           >
             Key Achievements
@@ -82,7 +85,6 @@ const KeyAchievements = () => {
               backgroundSize: 'cover',
               backgroundPosition: 'center',  // Ensure the background image is centered
               backgroundRepeat: 'no-repeat', // Prevent repeating of background image
-              // Apply different heights based on screen sizes
               height: { xs: '400px', sm: '500px', md: '600px' },  // Set height for different screen sizes
             }}
           >
