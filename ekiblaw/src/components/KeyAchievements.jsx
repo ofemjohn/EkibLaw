@@ -71,18 +71,22 @@ const KeyAchievements = () => {
         <Grid item xs={12} md={6}>
           <Box
             sx={{
-              backgroundColor: '#ECDAC1',
-              borderRadius: '50%',
               display: 'flex',
               justifyContent: 'center',
-              padding: 3,
+              alignItems: 'center',
+              width: '100%',
+              height: '100%',
+              borderRadius: '50%',
               position: 'relative',
-              width: '387px',
-              height: '499px',
-              background: `url(${EKIB3}) center center / cover no-repeat, #ECDAC1`, // Layering the background image with the initial background color
+              backgroundImage: `url(${EKIB3})`,  // Using the background image URL
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',  // Ensure the background image is centered
+              backgroundRepeat: 'no-repeat', // Prevent repeating of background image
+              // Apply different heights based on screen sizes
+              height: { xs: '400px', sm: '500px', md: '600px' },  // Set height for different screen sizes
             }}
           >
-            {/* Empty Box for the background image */}
+            {/* The image is now set as the background */}
           </Box>
         </Grid>
 
