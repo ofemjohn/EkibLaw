@@ -3,7 +3,7 @@ import { Box, Typography, Divider, Grid, List, ListItem, ListItemText, ListItemI
 import StarIcon from '@mui/icons-material/Star';
 import GavelIcon from '@mui/icons-material/Gavel';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import EKIB7 from '../assets/EKIB7.jpg';
+import EKIB7 from '../assets/EKIB7.webp';
 
 
 const affiliations = [

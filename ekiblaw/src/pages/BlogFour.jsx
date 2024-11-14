@@ -4,7 +4,7 @@ import AboutNav from '../components/AboutNav';
 import BlogPost from '../components/BlogPost';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
-import personalinjury from "../assets/personalinjury.avif";
+import personalinjury from "../assets/personalinjury.webp";
 
 
 const BlogFour = () => {
@@ -22,6 +22,7 @@ const BlogFour = () => {
           flexDirection: 'column',
           position: 'relative',
           zIndex: 1,
+          
         }}
       >
         <AboutNav />

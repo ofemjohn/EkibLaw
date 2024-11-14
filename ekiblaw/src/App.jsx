@@ -8,7 +8,6 @@ export default function App() {
     <div>
       <main>
         {/* <ScrollUpButton /> */}
-        {/* All routes are rendered here */}
         <Outlet />
         <ScrollUpButton /> 
       </main>

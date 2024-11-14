@@ -2,8 +2,8 @@ import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { Box, Typography, Divider, Card, CardMedia, CardContent, Link, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import businesslaw from "../assets/businesslaw.avif";
-import personalinjury from "../assets/personalinjury.avif";
+import businesslaw from "../assets/businesslaw.webp";
+import personalinjury from "../assets/personalinjury.webp";
 import politicalgovernance from "../assets/politicalgovernance.webp";
 import solicitor from "../assets/solicitor.webp";
 

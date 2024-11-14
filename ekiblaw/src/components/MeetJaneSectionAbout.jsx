@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Grid, Divider } from '@mui/material';
-import EKIB4 from '../assets/EKIB4.jpg';
+import EKIB4 from '../assets/EKIB4.webp';
 
 const MeetJaneSectionAbout = () => {
   return (

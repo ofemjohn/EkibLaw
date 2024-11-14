@@ -1,6 +1,6 @@
 import { Box, Typography, Button, Divider, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import EKIB9 from '../assets/EKIB9.jpg';
+import EKIB9 from '../assets/EKIB9.webp';
 
 const MeetJaneSection = () => {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button, Grid } from "@mui/material";
 import AboutNav from "./AboutNav";
-import EKIB2 from "../assets/EKIB2.jpg";
+import EKIB2 from "../assets/EKIB2.webp";
 
 const AboutHeroSection = () => {
   const handleConsultationClick = () => {

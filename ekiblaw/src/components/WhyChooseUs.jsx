@@ -1,7 +1,7 @@
 import { Box, Typography, Divider, Grid, Card, CardMedia, CardContent } from '@mui/material';
-import whychooseusone from '../assets/whychooseusone.png';
-import whychooseustwo from '../assets/whychooseustwo.png';
-import whychooseusthree from '../assets/whychooseusthree.png';
+import whychooseusone from '../assets/whychooseusone.webp';
+import whychooseustwo from '../assets/whychooseustwo.webp';
+import whychooseusthree from '../assets/whychooseusthree.webp';
 
 
 const WhyChooseUs = () => {

@@ -8,7 +8,7 @@ import TwitterIcon from '@mui/icons-material/Twitter'; // Removed since your cli
 import CopyrightIcon from '@mui/icons-material/Copyright';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
-import footerImage from '../assets/footerImage.png';
+import footerImage from '../assets/footerImage.webp';
 
 
 const Footer = () => {

@@ -4,7 +4,7 @@ import { Box, IconButton, Drawer, List, ListItemButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useMediaQuery } from '@mui/material';
 import { HashLink as Link } from "react-router-hash-link"; // Ensure you import HashLink
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState('home');
@@ -34,6 +34,7 @@ const Navbar = () => {
       {/* Logo Image */}
       <Box
         component="img"
+        loading="lazy"
         src={logo}
         alt="Vanguard Law Firm Logo"
         sx={{

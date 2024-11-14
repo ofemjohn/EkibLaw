@@ -4,7 +4,7 @@ import AboutNav from '../components/AboutNav'; // Import your Navbar component
 import BlogPost from '../components/BlogPost';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
-import businesslaw from "../assets/businesslaw.avif";
+import businesslaw from "../assets/businesslaw.webp";
 
 
 const BlogFive = () => {

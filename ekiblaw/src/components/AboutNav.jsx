@@ -3,7 +3,7 @@ import { Box, IconButton, Drawer, List, ListItemButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useMediaQuery } from '@mui/material';
 import { HashLink as Link } from "react-router-hash-link";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 
 const AboutNav = () => {
   const [activeLink, setActiveLink] = useState('home');

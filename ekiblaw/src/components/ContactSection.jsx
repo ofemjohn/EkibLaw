@@ -7,7 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-import contactBackground from '../assets/contactsectionbackground.png';
+import contactBackground from '../assets/contactsectionbackground.webp';
 
 const contactItems = [
   {

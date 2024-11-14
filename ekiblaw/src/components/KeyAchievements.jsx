@@ -6,7 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookIcon from '@mui/icons-material/Book';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import EKIB3 from '../assets/EKIB3.jpg';
+import EKIB3 from '../assets/EKIB3.webp';
 
 
 
@@ -85,6 +85,7 @@ const KeyAchievements = () => {
           >
             <img
               src={EKIB3}
+              loading="lazy"
               alt="Profile of Ekib Ekure"
               style={{
                 width: '370px',
