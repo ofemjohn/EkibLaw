@@ -84,7 +84,7 @@ const HeroSection = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 borderRadius: '360px 360px 0px 0px',
-                boxShadow: '0 0 15px 10px rgba(0, 0, 0, 0.2)',
+               
               }}
             />
           </Grid>

@@ -100,7 +100,6 @@ const AboutHeroSection = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 borderRadius: '180px 0px 0px 0px',
-                boxShadow: '0 0 1px 1px rgba(255, 255, 255, 0.8)',
                 height: { xs: '400px', sm: '450px', md: '500px' }, // Set height based on screen size
               }}
             />
