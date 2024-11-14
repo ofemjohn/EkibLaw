@@ -5,7 +5,6 @@ import GavelIcon from '@mui/icons-material/Gavel';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import EKIB7 from '../assets/EKIB7.webp';
 
-
 const affiliations = [
   {
     title: "State and Superior Courts of Georgia",
@@ -32,15 +31,17 @@ const affiliations = [
 const Affiliate = () => {
   return (
     <Box sx={{ padding: 4 }}>
-      <Grid container alignItems="center" sx={{ marginBottom: 2 }}>
+      <Grid container alignItems="center" sx={{ flexDirection: { xs: 'column', md: 'row' } }}>
         {/* Title Section */}
-        <Grid item sx={{ display: 'flex', alignItems: 'center' }}>
+        <Grid item sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
           <Divider
-            orientation="vertical"
-            sx={{ height: { xs: 40, md: 58 }, backgroundColor: '#447F6D', width: '5px' }}
+            orientation="horizontal"
+            sx={{ height: 5, backgroundColor: '#447F6D', width: '100%', marginBottom: 2 }}
           />
         </Grid>
-        <Grid item sx={{ display: 'flex', alignItems: 'center' }}>
+
+        {/* Professional Affiliations Text Section */}
+        <Grid item xs={12}>
           <Typography
             variant="h4"
             sx={{
@@ -48,6 +49,8 @@ const Affiliate = () => {
               color: '#3D3D3D',
               marginLeft: 2,
               fontFamily: 'Teachers',
+              textAlign: { xs: 'center', md: 'left' },
+              marginTop: 2, // Added margin for better spacing below divider
             }}
           >
             Professional Affiliations
@@ -55,10 +58,10 @@ const Affiliate = () => {
         </Grid>
       </Grid>
 
-      <Grid container spacing={12}>
+      <Grid container spacing={2}>
         {/* Affiliations List Section */}
         <Grid item xs={12} md={6}>
-          <List sx={{ padding: 0, marginTop: '60px' }}>
+          <List sx={{ padding: 0 }}>
             {affiliations.map((affiliation, index) => (
               <ListItem key={index}>
                 <ListItemIcon>{affiliation.icon}</ListItemIcon>
@@ -93,6 +96,7 @@ const Affiliate = () => {
               position: 'relative',
               height: '70%',
               overflow: 'hidden',
+              marginTop: { xs: 2, md: 0 }, // Add margin for small screens
             }}
           >
             <img

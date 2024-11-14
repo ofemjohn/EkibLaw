@@ -1,9 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Box, IconButton, Drawer, List, ListItemButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useMediaQuery } from '@mui/material';
 import { HashLink as Link } from "react-router-hash-link";
 import logo from "../assets/logo.webp";
+
+// Memoized Link Component to prevent unnecessary re-renders
+const MemoizedLink = React.memo(({ text, to, activeLink, onClick }) => (
+  <Link
+    smooth
+    to={to}
+    onClick={onClick}
+    style={{
+      textDecoration: 'none',
+      color: activeLink === text.toLowerCase() ? '#D8B482' : '#FFF',
+      borderBottom: activeLink === text.toLowerCase() ? '3px solid #D8B482' : 'none',
+    }}
+  >
+    {text}
+  </Link>
+));
 
 const AboutNav = () => {
   const [activeLink, setActiveLink] = useState('home');
@@ -11,9 +27,10 @@ const AboutNav = () => {
   const isMobile = useMediaQuery('(max-width: 600px)');
   const isTablet = useMediaQuery('(max-width: 900px)');
 
-  const handleDrawerToggle = () => {
-    setDrawerOpen(!drawerOpen);
-  };
+  // Memoized function for toggling drawer state
+  const handleDrawerToggle = useCallback(() => {
+    setDrawerOpen(prev => !prev);
+  }, []);
 
   return (
     <Box
@@ -27,7 +44,7 @@ const AboutNav = () => {
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
         flexDirection: isMobile ? 'column' : 'row',
         marginTop: '40px',
-        overflow: 'hidden', // Prevent overflow
+        overflow: 'hidden',
       }}
     >
       {/* Logo Image */}
@@ -36,14 +53,14 @@ const AboutNav = () => {
         src={logo}
         alt="Vanguard Law Firm Logo"
         sx={{
-          height: '50px', // Keep the Navbar height
-          width: 'auto', // Maintain aspect ratio
+          height: '50px',
+          width: 'auto',
           cursor: 'pointer',
           transform: isMobile ? 'scale(4.5)' : isTablet ? 'scale(4)' : 'scale(5.3)',
-          transformOrigin: 'left center', // Expand to the right
+          transformOrigin: 'left center',
           filter: 'drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3)) contrast(200%)',
-          marginRight: '250px', // Space between logo and links
-          paddingLeft: '0px', // Remove left padding
+          marginRight: '250px',
+          paddingLeft: '0px',
         }}
       />
 
@@ -54,44 +71,34 @@ const AboutNav = () => {
           </IconButton>
           <Drawer anchor="top" open={drawerOpen} onClose={handleDrawerToggle}>
             <List sx={{ width: '100%', backgroundColor: '#1E1E1E', color: '#FFF' }}>
-              <ListItemButton onClick={() => setDrawerOpen(false)}>
-                <Link to="/" onClick={() => setActiveLink('home')} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  Home
-                </Link>
-              </ListItemButton>
-              <ListItemButton onClick={() => setDrawerOpen(false)}>
-                <Link smooth to="#contact" onClick={() => setActiveLink('contact us')} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  Contact Us
-                </Link>
-              </ListItemButton>
+              {['Home', 'Contact Us'].map((text, index) => (
+                <ListItemButton key={index} onClick={() => setDrawerOpen(false)}>
+                  <MemoizedLink
+                    text={text}
+                    to={text === 'Home' ? '/' : `#contacts`}  // Correct home and contact links
+                    onClick={() => setActiveLink(text.toLowerCase())}
+                    activeLink={activeLink}
+                  />
+                </ListItemButton>
+              ))}
             </List>
           </Drawer>
         </>
       ) : (
         <Box sx={{ display: 'flex', gap: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
-          <Link
+          {/* Desktop View */}
+          <MemoizedLink
+            text="Home"
             to="/"
             onClick={() => setActiveLink('home')}
-            style={{
-              textDecoration: 'none',
-              color: activeLink === 'home' ? '#D8B482' : '#FFF',
-              borderBottom: activeLink === 'home' ? '3px solid #D8B482' : 'none',
-            }}
-          >
-            Home
-          </Link>
-          <Link
-            smooth
-            to="#contacts"
+            activeLink={activeLink}
+          />
+          <MemoizedLink
+            text="Contact Us"
+            to="#contacts"  // Correctly links to the contact section
             onClick={() => setActiveLink('contact us')}
-            style={{
-              textDecoration: 'none',
-              color: activeLink === 'contact us' ? '#D8B482' : '#FFF',
-              borderBottom: activeLink === 'contact us' ? '3px solid #D8B482' : 'none',
-            }}
-          >
-            Contact Us
-          </Link>
+            activeLink={activeLink}
+          />
         </Box>
       )}
     </Box>

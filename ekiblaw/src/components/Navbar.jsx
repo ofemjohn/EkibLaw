@@ -1,10 +1,25 @@
-// Navbar.jsx
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Box, IconButton, Drawer, List, ListItemButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useMediaQuery } from '@mui/material';
 import { HashLink as Link } from "react-router-hash-link"; // Ensure you import HashLink
 import logo from "../assets/logo.webp";
+
+// Memoized Link Component to prevent unnecessary re-renders
+const MemoizedLink = React.memo(({ text, to, activeLink, onClick }) => (
+  <Link
+    smooth
+    to={to}
+    onClick={onClick}
+    style={{
+      textDecoration: 'none',
+      color: activeLink === text.toLowerCase() ? '#D8B482' : '#FFF',
+      borderBottom: activeLink === text.toLowerCase() ? '3px solid #D8B482' : 'none',
+    }}
+  >
+    {text}
+  </Link>
+));
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState('home');
@@ -12,9 +27,10 @@ const Navbar = () => {
   const isMobile = useMediaQuery('(max-width: 600px)');
   const isTablet = useMediaQuery('(max-width: 900px)');
 
-  const handleDrawerToggle = () => {
-    setDrawerOpen(!drawerOpen);
-  };
+  // Memoize the handleDrawerToggle function to avoid unnecessary re-renders
+  const handleDrawerToggle = useCallback(() => {
+    setDrawerOpen(prev => !prev);
+  }, []);
 
   return (
     <Box
@@ -58,14 +74,12 @@ const Navbar = () => {
             <List sx={{ width: '100%', backgroundColor: '#1E1E1E', color: '#FFF' }}>
               {['Home', 'About Us', 'Services', 'Blog', 'Contact Us'].map((text, index) => (
                 <ListItemButton key={index} onClick={() => setDrawerOpen(false)}>
-                  <Link
-                    smooth
+                  <MemoizedLink
+                    text={text}
                     to={`#${text.toLowerCase().replace(' ', '-')}`} // Hash links to respective sections
                     onClick={() => setActiveLink(text.toLowerCase())}
-                    style={{ textDecoration: 'none', color: 'inherit' }}
-                  >
-                    {text}
-                  </Link>
+                    activeLink={activeLink}
+                  />
                 </ListItemButton>
               ))}
             </List>
@@ -75,19 +89,13 @@ const Navbar = () => {
         <Box sx={{ display: 'flex', gap: '24px', flexWrap: 'wrap', alignItems: 'center' }}>
           {/* Desktop View */}
           {['Home', 'About Us', 'Services', 'Blog', 'Contact Us'].map((text, index) => (
-            <Link
+            <MemoizedLink
               key={index}
-              smooth
+              text={text}
               to={`#${text.toLowerCase().replace(' ', '-')}`} // Hash links to respective sections
               onClick={() => setActiveLink(text.toLowerCase())}
-              style={{
-                textDecoration: 'none',
-                color: activeLink === text.toLowerCase() ? '#D8B482' : '#FFF',
-                borderBottom: activeLink === text.toLowerCase() ? '3px solid #D8B482' : 'none',
-              }}
-            >
-              {text}
-            </Link>
+              activeLink={activeLink}
+            />
           ))}
         </Box>
       )}
