@@ -6,9 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookIcon from '@mui/icons-material/Book';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import EKIB3 from '../assets/EKIB3.webp';
-
-
+import EKIB3 from '../assets/EKIB3.webp'; // Using the background image URL
 
 const achievements = [
   {
@@ -81,22 +79,10 @@ const KeyAchievements = () => {
               position: 'relative',
               width: '387px',
               height: '499px',
+              background: `url(${EKIB3}) center center / cover no-repeat, #ECDAC1`, // Layering the background image with the initial background color
             }}
           >
-            <img
-              src={EKIB3}
-              loading="lazy"
-              alt="Profile of Ekib Ekure"
-              style={{
-                width: '370px',
-                height: '500px',
-                borderRadius: '50%',
-                position: 'absolute',
-                top: '20px',
-                left: '30px',
-                opacity: 1,
-              }}
-            />
+            {/* Empty Box for the background image */}
           </Box>
         </Grid>
 

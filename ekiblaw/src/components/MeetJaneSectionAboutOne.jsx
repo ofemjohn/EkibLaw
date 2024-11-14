@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box, Typography, Divider, Grid } from '@mui/material';
-import EKIB10 from '../assets/EKIB10.webp';
+import EKIB10 from '../assets/EKIB10.webp'; // Using the background image URL
 
 const MeetJaneSectionAboutOne = () => {
   return (
     <Grid container spacing={12} alignItems="stretch" sx={{ marginBottom: '50px' }}>
       {/* Image Section */}
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6} sx={{ order: { xs: 1, md: 0 } }}> {/* Change order on smaller screens */}
         <Box
           sx={{
             backgroundColor: '#333333',
@@ -15,26 +15,14 @@ const MeetJaneSectionAboutOne = () => {
             justifyContent: 'center',
             padding: 2,
             position: 'relative',
-            height: '80%',
+            height: { xs: '600px', sm: '700px', md: '800px' },  // Set height for different screen sizes
             overflow: 'hidden',
+            backgroundImage: `url(${EKIB10})`,  // Using the background image URL
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',  // Ensure the image is centered
           }}
         >
-          <Box
-            component="img"
-            src={EKIB10}
-            alt="Ekib Ekure, Esq"
-            loading="lazy"
-            sx={{
-              width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                borderRadius: "8px",
-                position: "relative",
-                zIndex: 2,
-                top: 25,
-                left: 20,
-            }}
-          />
+          {/* Empty Box for the background image */}
         </Box>
       </Grid>
 

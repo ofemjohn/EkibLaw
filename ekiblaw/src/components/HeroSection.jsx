@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Button, Grid } from '@mui/material';
 import Navbar from './Navbar';
 import { HashLink as Link } from "react-router-hash-link";
-import EKIB1 from '../assets/EKIB1.webp'; // Using the correct .jpg image
+import EKIB1 from '../assets/EKIB1.webp'; // Using the correct .webp image
 
 const HeroSection = () => {
   return (
@@ -79,22 +79,15 @@ const HeroSection = () => {
                 display: 'flex',
                 justifyContent: { xs: 'center', md: 'flex-end' },
                 height: '100%',
+                backgroundImage: `url(${EKIB1})`,  // Using the imported image as a URL
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                width: '570px',
+                height: '570px',
+                borderRadius: '360px 360px 0px 0px',
+                boxShadow: '0 0 15px 10px rgba(0, 0, 0, 0.2)',
               }}
-            >
-              {/* Lazy loading image */}
-              <Box
-                component="img"
-                src={EKIB1}
-                alt="Hero Image"
-                loading="lazy" // Lazy load the image
-                sx={{
-                  width: '570px',
-                  height: '570px',
-                  objectFit: 'cover',
-                  borderRadius: '360px 360px 0px 0px',
-                }}
-              />
-            </Box>
+            />
           </Grid>
         </Grid>
       </Box>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Grid, Divider } from '@mui/material';
-import EKIB4 from '../assets/EKIB4.webp';
+import EKIB4 from '../assets/EKIB4.webp'; // Importing the image
 
 const MeetJaneSectionAbout = () => {
   return (
@@ -71,24 +71,15 @@ const MeetJaneSectionAbout = () => {
             justifyContent: 'center',
             alignItems: 'center',
             width: '100%',
-            height: '100%',
+            height: { xs: '600px', sm: '700px', md: '800px' }, // Set height for smaller screens
             borderRadius: '8px',
             overflow: 'hidden',
-            
+            backgroundImage: `url(${EKIB4})`, // Using the URL for background image
+            backgroundSize: 'cover', // Ensure the image covers the box
+            backgroundPosition: 'center', // Center the background image
           }}
         >
-          <Box
-            component="img"
-            src={EKIB4}
-            alt="Ekib Ekure, Esq"
-            loading="lazy"
-            sx={{
-              width: { xs: '300px', sm: '350px', md: '460px' },
-              height: { xs: '300px', sm: '350px', md: '600px' },
-              borderRadius: '8px',
-              objectFit: 'fill',
-            }}
-          />
+          {/* Empty Box for background image */}
         </Box>
       </Grid>
     </Grid>

@@ -1,6 +1,7 @@
+import React from 'react';
 import { Box, Typography, Button, Divider, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import EKIB9 from '../assets/EKIB9.webp';
+import EKIB9 from '../assets/EKIB9.webp'; // Using the correct .webp image
 
 const MeetJaneSection = () => {
   const navigate = useNavigate();
@@ -25,27 +26,12 @@ const MeetJaneSection = () => {
             marginLeft: { xs: 0, md: '41px' },
             backgroundColor: '#D8B482',
             borderRadius: '4px 0px 0px 0px',
-            // boxShadow: '0 0 30px 10px rgba(0, 0, 0, 0.2)',
             overflow: 'hidden',
+            backgroundImage: `url(${EKIB9})`,  // Using the imported image as a background
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
-        >
-          <Box
-            component="img"
-            src={EKIB9}
-            alt="Ekib Ekure, Esq"
-            loading="lazy"
-            sx={{
-              position: 'absolute',
-              top: { xs: '-10px', md: '-25px' }, // Responsive top offset
-              left: { xs: '10px', md: '30px' }, // Responsive left offset
-              width: { xs: '90%', md: '100%' },
-              height: '100%',
-              objectFit: 'cover',
-              borderRadius: '8px',
-              // boxShadow: '0 0 30px 10px rgba(255, 255, 255, 0.8)',
-            }}
-          />
-        </Box>
+        />
       </Grid>
 
       {/* Text Section */}

@@ -96,22 +96,14 @@ const AboutHeroSection = () => {
                 display: "flex",
                 justifyContent: { xs: "center", md: "flex-end" },
                 height: "100%",
+                backgroundImage: `url(${EKIB2})`, // Using the image as a background URL
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                borderRadius: '180px 0px 0px 0px',
+                boxShadow: '0 0 1px 1px rgba(255, 255, 255, 0.8)',
+                height: { xs: '400px', sm: '450px', md: '500px' }, // Set height based on screen size
               }}
-            >
-              <Box
-                component="img"
-                src={EKIB2}
-                alt="Ekib Ekure"
-                loading="lazy"
-                sx={{
-                  width: { xs: '400px', sm: '500px', md: '600px' },
-                  height: { xs: '400px', sm: '450px', md: '500px' },
-                  borderRadius: '180px 0px 0px 0px', // Applied the specified top-right radius
-                  objectFit: 'cover',
-                  boxShadow: '0 0 1px 1px rgba(255, 255, 255, 0.8)',
-                }}
-              />
-            </Box>
+            />
           </Grid>
         </Grid>
       </Box>

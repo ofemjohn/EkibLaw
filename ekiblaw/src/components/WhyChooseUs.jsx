@@ -1,8 +1,7 @@
-import { Box, Typography, Divider, Grid, Card, CardMedia, CardContent } from '@mui/material';
+import { Box, Typography, Divider, Grid, Card, CardContent } from '@mui/material';
 import whychooseusone from '../assets/whychooseusone.webp';
 import whychooseustwo from '../assets/whychooseustwo.webp';
 import whychooseusthree from '../assets/whychooseusthree.webp';
-
 
 const WhyChooseUs = () => {
   return (
@@ -25,15 +24,15 @@ const WhyChooseUs = () => {
         {/* Expertise Card */}
         <Grid item xs={12} sm={6} md={4}>
           <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
-            <CardMedia
-              component="img"
-              image={whychooseusone}
-              alt="Deep Expertise"
+            <Box
               sx={{
                 width: '100%',
                 aspectRatio: '1.66',
                 borderRadius: 1,
                 minHeight: 220,
+                backgroundImage: `url(${whychooseusone})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
               }}
             />
             <CardContent>
@@ -65,15 +64,15 @@ const WhyChooseUs = () => {
         {/* Personalized Service Card */}
         <Grid item xs={12} sm={6} md={4}>
           <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
-            <CardMedia
-              component="img"
-              image={whychooseustwo}
-              alt="Personalized Service"
+            <Box
               sx={{
                 width: '100%',
                 aspectRatio: '1.66',
                 borderRadius: 1,
                 minHeight: 220,
+                backgroundImage: `url(${whychooseustwo})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
               }}
             />
             <CardContent>
@@ -105,15 +104,15 @@ const WhyChooseUs = () => {
         {/* Integrity and Ethics Card */}
         <Grid item xs={12} sm={6} md={4}>
           <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
-            <CardMedia
-              component="img"
-              image={whychooseusthree}
-              alt="Integrity and Ethics"
+            <Box
               sx={{
                 width: '100%',
                 aspectRatio: '1.66',
                 borderRadius: 1,
                 minHeight: 220,
+                backgroundImage: `url(${whychooseusthree})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
               }}
             />
             <CardContent>
