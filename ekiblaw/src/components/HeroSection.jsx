@@ -78,12 +78,11 @@ const HeroSection = () => {
               sx={{
                 display: 'flex',
                 justifyContent: { xs: 'center', md: 'flex-end' },
-                height: '100%',
+                height: { xs: '300px', sm: '400px', md: '570px' }, // Adjusting height for different screen sizes
+                width: { xs: '300px', sm: '400px', md: '570px' }, // Adjusting width for different screen sizes
                 backgroundImage: `url(${EKIB1})`,  // Using the imported image as a URL
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                width: '570px',
-                height: '570px',
                 borderRadius: '360px 360px 0px 0px',
                 boxShadow: '0 0 15px 10px rgba(0, 0, 0, 0.2)',
               }}
