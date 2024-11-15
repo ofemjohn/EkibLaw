@@ -123,7 +123,14 @@ const ContactSection = () => {
             {contactItems.map((item, index) => (
               <Grid item xs={12} sm={6} key={index}>
                 <a href={item.href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                  <Card sx={{ backgroundColor: '#FFF', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', borderRadius: '10px', textAlign: 'center', padding: 2 }}>
+                  <Card sx={{ 
+                    backgroundColor: '#FFF', 
+                    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', 
+                    borderRadius: '10px', 
+                    textAlign: 'center', 
+                    padding: 2, 
+                    border: '2px solid #A9D5B8', // Light Green border
+                  }}>
                     <CardContent>
                       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
                         {/* Icon and Text Horizontally Aligned */}
