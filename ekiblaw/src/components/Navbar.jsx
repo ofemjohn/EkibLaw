@@ -45,6 +45,7 @@ const Navbar = () => {
         flexDirection: isMobile ? 'column' : 'row',
         marginTop: '40px',
         overflow: 'hidden', // Prevent logo overflow
+    
       }}
     >
       {/* Logo Image */}
@@ -64,6 +65,7 @@ const Navbar = () => {
           paddingLeft: '0px', // Remove left padding
         }}
       />
+
 
       {isMobile ? (
         <>

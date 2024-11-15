@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography, Grid, TextField, Button, IconButton, Snackbar, LinearProgress, List, ListItem, ListItemText, ListItemIcon } from '@mui/material';
+import { Box, Typography, Grid, TextField, Button, IconButton, Snackbar, LinearProgress, Card, CardContent } from '@mui/material';
 import MuiAlert from '@mui/material/Alert';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -11,31 +11,31 @@ import contactBackground from '../assets/contactsectionbackground.webp';
 
 const contactItems = [
   {
-    icon: <EmailIcon sx={{ color: '#447F6D' }} />,
+    icon: <EmailIcon sx={{ color: '#447F6D', fontSize: '40px', marginRight: 2 }} />,
     label: 'Email',
     value: 'ekibekurelaw@gmail.com (info@ekibekurelaw.com)',
     href: 'mailto:ekibekurelaw@gmail.com',
   },
   {
-    icon: <PhoneIcon sx={{ color: '#447F6D' }} />,
+    icon: <PhoneIcon sx={{ color: '#447F6D', fontSize: '40px', marginRight: 2 }} />,
     label: 'Telephone',
     value: '(678) 632-0858',
     href: 'tel:+16786320858',
   },
   {
-    icon: <InstagramIcon sx={{ color: '#E4405F' }} />,
+    icon: <InstagramIcon sx={{ color: '#E4405F', fontSize: '40px', marginRight: 2 }} />,
     label: 'Instagram',
     value: '@thenaijalawyer',
     href: 'https://www.instagram.com/thenaijalawyer/',
   },
   {
-    icon: <FacebookIcon sx={{ color: '#4267B2' }} />,
+    icon: <FacebookIcon sx={{ color: '#4267B2', fontSize: '40px', marginRight: 2 }} />,
     label: 'Facebook',
     value: '@thenaijalawyer',
     href: 'https://www.facebook.com/thenaijalawyer',
   },
   {
-    icon: <LinkedInIcon sx={{ color: '#0077B5' }} />,
+    icon: <LinkedInIcon sx={{ color: '#0077B5', fontSize: '40px', marginRight: 2 }} />,
     label: 'LinkedIn',
     value: 'Ekib Ekure',
     href: 'https://www.linkedin.com/in/ekib-ekure-89a75665',
@@ -118,17 +118,27 @@ const ContactSection = () => {
             Reach out to us through any of the following channels:
           </Typography>
 
-          <List>
+          {/* Contact Items - Displaying in 2 items per row */}
+          <Grid container spacing={3}>
             {contactItems.map((item, index) => (
-              <ListItem key={index} component="a" href={item.href} target="_blank" rel="noopener noreferrer">
-                <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemText
-                  primary={<Typography variant="h6" fontWeight={600} color="#3D3D3D">{item.label}</Typography>}
-                  secondary={<Typography variant="body2" color="#4F4F4F">{item.value}</Typography>}
-                />
-              </ListItem>
+              <Grid item xs={12} sm={6} key={index}>
+                <a href={item.href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                  <Card sx={{ backgroundColor: '#FFF', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', borderRadius: '10px', textAlign: 'center', padding: 2 }}>
+                    <CardContent>
+                      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
+                        {/* Icon and Text Horizontally Aligned */}
+                        {item.icon}
+                        <Box sx={{ textAlign: 'center' }}>
+                          <Typography variant="h6" fontWeight={600} color="#3D3D3D">{item.label}</Typography>
+                          <Typography variant="body2" color="#4F4F4F" sx={{ textAlign: 'center' }}>{item.value}</Typography>
+                        </Box>
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </a>
+              </Grid>
             ))}
-          </List>
+          </Grid>
         </Grid>
 
         {/* Right Column: Contact Form */}

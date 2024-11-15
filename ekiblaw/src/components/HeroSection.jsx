@@ -20,7 +20,7 @@ const HeroSection = () => {
         <Navbar />
 
         {/* Hero Content */}
-        <Grid container spacing={12} alignItems="center" sx={{ marginTop: '0px' }}>
+        <Grid container spacing={2} alignItems="center" sx={{ marginTop: '0px' }}>
           {/* Left Text Section */}
           <Grid item xs={12} md={6}>
             <Box
@@ -78,13 +78,15 @@ const HeroSection = () => {
               sx={{
                 display: 'flex',
                 justifyContent: { xs: 'center', md: 'flex-end' },
-                height: { xs: '300px', sm: '400px', md: '570px' }, // Adjusting height for different screen sizes
-                width: { xs: '300px', sm: '400px', md: '570px' }, // Adjusting width for different screen sizes
-                backgroundImage: `url(${EKIB1})`,  // Using the imported image as a URL
+                position: 'relative',
+                width: '100%', // Makes the image take full width on smaller screens
+                height: { xs: '250px', sm: '350px', md: '570px' }, // Adjusts height based on screen size
+                maxWidth: '100%', // Prevents image from exceeding the container's width
+                backgroundImage: `url(${EKIB1})`, // Using the imported image as a URL
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 borderRadius: '360px 360px 0px 0px',
-               
+                boxShadow: '0 0 15px 10px rgba(0, 0, 0, 0.2)',
               }}
             />
           </Grid>
