@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, Divider, Grid } from '@mui/material';
-import EKIB10 from '../assets/EKIB10.webp'; // Using the background image URL
+import EKIB2 from '../assets/EKIB2.webp';
 
 const MeetJaneSectionAboutOne = () => {
   return (
@@ -17,7 +17,7 @@ const MeetJaneSectionAboutOne = () => {
             position: 'relative',
             height: { xs: '600px', sm: '700px', md: '800px' },  // Set height for different screen sizes
             overflow: 'hidden',
-            backgroundImage: `url(${EKIB10})`,  // Using the background image URL
+            backgroundImage: `url(${EKIB2})`,  // Using the background image URL
             backgroundSize: 'cover',
             backgroundPosition: 'center',  // Ensure the image is centered
           }}

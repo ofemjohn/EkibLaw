@@ -6,7 +6,6 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookIcon from '@mui/icons-material/Book';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import EKIB5 from '../assets/EKIB5.webp'; // Using the background image URL
 
 const achievements = [
   {
@@ -44,86 +43,29 @@ const achievements = [
 const KeyAchievements = () => {
   return (
     <Box sx={{ padding: 4 }}>
-      <Grid container alignItems="center" sx={{ marginBottom: 2 }}>
-        <Grid item xs={12} sm={12} md={12} sx={{ display: 'flex', alignItems: 'center', marginBottom: { xs: 1, md: 2 } }}>
-          <Divider
-            orientation="vertical"
-            sx={{
-              height: { xs: 30, md: 58 },
-              backgroundColor: '#447F6D',
-              width: '5px',
-              marginRight: { xs: 2, md: 4 }, // Adjust margin for smaller screens
-            }}
-          />
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 700,
-              color: '#3D3D3D',
-              fontFamily: 'Teachers',
-              fontSize: { xs: '24px', sm: '28px', md: '36px' }, // Adjust text size for smaller screens
-            }}
-          >
+      <Grid container alignItems="center" sx={{ mb: 4 }}>
+        <Grid item xs={12}>
+          <Divider orientation="horizontal" sx={{ height: 5, backgroundColor: '#447F6D', width: '100%', mb: 2 }} />
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h4" sx={{ fontWeight: 700, color: '#3D3D3D', fontFamily: 'Teachers', fontSize: { xs: '24px', sm: '28px', md: '36px' }, textAlign: 'center' }}>
             Key Achievements
           </Typography>
         </Grid>
       </Grid>
 
-      <Grid container spacing={12}>
-        {/* Profile Image Section */}
-        <Grid item xs={12} md={6}>
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '100%',
-              height: '100%',
-              borderRadius: '50%',
-              position: 'relative',
-              backgroundImage: `url(${EKIB5})`,  // Using the background image URL
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',  // Ensure the background image is centered
-              backgroundRepeat: 'no-repeat', // Prevent repeating of background image
-              height: { xs: '400px', sm: '500px', md: '600px' },  // Set height for different screen sizes
-            }}
-          >
-            {/* The image is now set as the background */}
-          </Box>
-        </Grid>
-
-        {/* Achievements List Section */}
-        <Grid item xs={12} md={6}>
-          <List>
-            {achievements.map((achievement, index) => (
-              <ListItem key={index}>
-                <ListItemIcon>{achievement.icon}</ListItemIcon>
-                <ListItemText
-                  primary={
-                    <Typography
-                      variant="h6"
-                      sx={{ fontFamily: 'Teachers', fontWeight: 600, color: '#3D3D3D' }}
-                    >
-                      {achievement.title}
-                    </Typography>
-                  }
-                  secondary={
-                    <Typography
-                      sx={{
-                        fontFamily: 'Teachers',
-                        color: '#4F4F4F',
-                        fontSize: '16px',
-                        lineHeight: '24px',
-                      }}
-                    >
-                      {achievement.description}
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            ))}
-          </List>
-        </Grid>
+      <Grid container spacing={4}>
+        {achievements.map((achievement, index) => (
+          <Grid item xs={12} md={6} key={index}>
+            <ListItem>
+              <ListItemIcon>{achievement.icon}</ListItemIcon>
+              <ListItemText
+                primary={<Typography variant="h6" sx={{ fontFamily: 'Teachers', fontWeight: 600, color: '#3D3D3D' }}>{achievement.title}</Typography>}
+                secondary={<Typography sx={{ fontFamily: 'Teachers', color: '#4F4F4F', fontSize: '16px', lineHeight: '24px' }}>{achievement.description}</Typography>}
+              />
+            </ListItem>
+          </Grid>
+        ))}
       </Grid>
     </Box>
   );

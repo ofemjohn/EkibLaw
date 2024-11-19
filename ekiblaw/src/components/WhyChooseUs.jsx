@@ -1,7 +1,7 @@
 import { Box, Typography, Grid, Card, CardContent, Divider } from '@mui/material';
-import businesslaw from '../assets/businesslaw.avif';
-import criminaldefence from '../assets/criminaldefence.webp';
-import personalinjury from '../assets/personalinjury.avif';
+import url1 from '../assets/url1.jpeg';
+import url2 from '../assets/url2.jpeg';
+import url3 from '../assets/url3.jpeg';
 
 const WhyChooseUs = () => {
   return (
@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
                 aspectRatio: '1.66',
                 borderRadius: 1,
                 minHeight: 220,
-                backgroundImage: `url(${businesslaw})`,
+                backgroundImage: `url(${url1})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
@@ -70,7 +70,7 @@ const WhyChooseUs = () => {
                 aspectRatio: '1.66',
                 borderRadius: 1,
                 minHeight: 220,
-                backgroundImage: `url(${criminaldefence})`,
+                backgroundImage: `url(${url2})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
@@ -110,7 +110,7 @@ const WhyChooseUs = () => {
                 aspectRatio: '1.66',
                 borderRadius: 1,
                 minHeight: 220,
-                backgroundImage: `url(${personalinjury})`,
+                backgroundImage: `url(${url3})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}

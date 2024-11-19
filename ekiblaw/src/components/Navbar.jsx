@@ -58,10 +58,10 @@ const Navbar = () => {
           height: '50px',
           width: 'auto',
           cursor: 'pointer',
-          transform: isMobile ? 'scale(4.5)' : isTablet ? 'scale(4)' : 'scale(5.3)',
+          transform: isMobile ? 'scale(3.7)' : isTablet ? 'scale(4)' : 'scale(5.3)',
           transformOrigin: 'left center', // Expand to the right
           filter: 'drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3)) contrast(200%)',
-          marginRight: '250px', // Add space between the logo and the links
+          marginRight: '240px', // Add space between the logo and the links
           paddingLeft: '0px', // Remove left padding
         }}
       />

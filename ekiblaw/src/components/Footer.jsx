@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter'; // Removed since your client doesn't use Twitter
 import CopyrightIcon from '@mui/icons-material/Copyright';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
@@ -24,8 +23,8 @@ const Footer = () => {
   };
 
   const contactData = [
-    { icon: <PhoneIcon sx={{ color: '#447F6D' }} />, text: "(678) 632-0858" },
-    { icon: <EmailIcon sx={{ color: '#447F6D' }} />, text: "ekibekurelaw@gmail.com" },
+    { icon: <PhoneIcon sx={{ color: '#D8B482' }} />, text: "(678) 632-0858" },
+    { icon: <EmailIcon sx={{ color: '#D8B482' }} />, text: "ekibekurelaw@gmail.com" },
   ];
 
   const navItems = [
