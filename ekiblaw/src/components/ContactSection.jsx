@@ -13,7 +13,7 @@ const contactItems = [
   {
     icon: <EmailIcon sx={{ color: '#447F6D', fontSize: '40px', marginRight: 2 }} />,
     label: 'Email',
-    value: 'ekibekurelaw@gmail.com (info@ekibekurelaw.com)',
+    value: 'ekibekurelaw@gmail.com',
     href: 'mailto:ekibekurelaw@gmail.com',
   },
   {

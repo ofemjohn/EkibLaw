@@ -6,7 +6,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookIcon from '@mui/icons-material/Book';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import EKIB3 from '../assets/EKIB3.webp'; // Using the background image URL
+import EKIB5 from '../assets/EKIB5.webp'; // Using the background image URL
 
 const achievements = [
   {
@@ -15,10 +15,10 @@ const achievements = [
     icon: <GavelIcon sx={{ color: '#8B4513' }} />,
   },
   {
-    title: "Landmark Legal Cases:",
-    description: "Achieved significant victories in high-profile cases, including effective plea deals and a stellar trial record.",
+    title: "Significant Legal Victories:",
+    description: "Achieved strong results in various cases, including effective plea deals and a proven trial record.",
     icon: <CheckCircleIcon sx={{ color: '#32CD32' }} />,
-  },
+  },  
   {
     title: "Pro Bono Leadership:",
     description: "Led several pro bono initiatives, providing legal aid to underprivileged communities and mentoring young attorneys.",
@@ -81,7 +81,7 @@ const KeyAchievements = () => {
               height: '100%',
               borderRadius: '50%',
               position: 'relative',
-              backgroundImage: `url(${EKIB3})`,  // Using the background image URL
+              backgroundImage: `url(${EKIB5})`,  // Using the background image URL
               backgroundSize: 'cover',
               backgroundPosition: 'center',  // Ensure the background image is centered
               backgroundRepeat: 'no-repeat', // Prevent repeating of background image

@@ -3,7 +3,7 @@ import { Box, IconButton, Drawer, List, ListItemButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useMediaQuery } from '@mui/material';
 import { HashLink as Link } from "react-router-hash-link"; // Ensure you import HashLink
-import logo from "../assets/logo.webp";
+import logo1 from "../assets/logo1.svg";
 
 // Memoized Link Component to prevent unnecessary re-renders
 const MemoizedLink = React.memo(({ text, to, activeLink, onClick }) => (
@@ -52,7 +52,7 @@ const Navbar = () => {
       <Box
         component="img"
         loading="lazy"
-        src={logo}
+        src={logo1}
         alt="Vanguard Law Firm Logo"
         sx={{
           height: '50px',

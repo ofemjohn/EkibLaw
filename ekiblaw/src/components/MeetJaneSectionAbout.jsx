@@ -59,6 +59,10 @@ const MeetJaneSectionAbout = () => {
             <br /><br />
 
             Felony cases are the more serious offenses in our criminal justice system. These offenses are punishable by more than a year in custody, a life sentence, or death in certain cases. Felony cases take a special set of skills to maneuver. Call us today to discuss your rights.
+
+            <br /><br />
+
+            <strong>Personal Injury</strong> – if you have been injured by the negligence of others you have a limited time to exercise rights provided by law. Motor vehicle accidents, slip and falls can lead to serious injuries that may lead to lifelong consequences. Call Ekib Ekure Law to fight for your rights.
           </Typography>
         </Box>
       </Grid>

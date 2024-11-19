@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Typography, Button, Grid } from "@mui/material";
 import AboutNav from "./AboutNav";
-import EKIB2 from "../assets/EKIB2.webp";
 
 const AboutHeroSection = () => {
   const handleConsultationClick = () => {
@@ -15,97 +14,103 @@ const AboutHeroSection = () => {
     <Box
       sx={{
         backgroundColor: "#1E1E1E",
-        padding: { xs: "20px", md: "45px 70px" },
+        py: { xs: 6, md: 10 },
+        px: { xs: 2, md: 10 },
         position: "relative",
         zIndex: 1,
-        marginBottom: "-45px",
+        backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%), url(/path/to/your/background.jpg)', //Replace with your background image path or remove for a gradient only
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+        animation: 'subtleBackground 10s ease-in-out infinite',
       }}
     >
-      <Box>
-        {/* Navbar */}
-        <AboutNav />
+      <AboutNav />
 
-        {/* Hero Content */}
-        <Grid container spacing={12} alignItems="center" sx={{ marginTop: "0px" }}>
-          {/* Left Text Section */}
-          <Grid item xs={12} md={6}>
-            <Box
+      <Grid container alignItems="center" justifyContent="center" sx={{ mt: 4 }}>
+        <Grid item xs={12} md={8}>
+          <Box sx={{ textAlign: "center", maxWidth: '600px', margin: '0 auto' }}>
+            <Typography
+              variant="h4"
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-                textAlign: { xs: "center", md: "left" },
+                fontSize: { xs: '24px', md: '32px' },
+                color: "rgba(255, 255, 255, 0.7)",
+                fontFamily: 'Teachers',
+                fontWeight: 500,
+                mb: 2,
+                "&:hover": {
+                  textShadow: "0px 0px 10px rgba(255,255,255,0.3)",
+                  cursor: 'default',
+                }
               }}
             >
-              <Typography
-                sx={{
-                  fontSize: "30px",
-                  color: "rgba(210, 210, 210, 1)",
-                  fontFamily: 'Teachers', // Apply custom font
-                }}
-              >
-                Get To Know
-              </Typography>
-              <Typography
-                variant="h2"
-                sx={{
-                  fontSize: "56px",
-                  fontWeight: 600,
-                  color: "rgba(210, 210, 210, 1)",
-                  fontFamily: 'Teachers', // Apply custom font
-                }}
-              >
-                Ekib Ekure
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "20px",
-                  fontStyle: "italic",
-                  fontWeight: 500,
-                  lineHeight: "30px",
-                  color: "rgba(210, 210, 210, 1)",
-                  fontFamily: 'Teachers', // Apply custom font
-                }}
-              >
-                Esq.
-              </Typography>
-              <Button
-                variant="contained"
-                onClick={handleConsultationClick}
-                sx={{
-                  backgroundColor: "#EFAE64",
-                  padding: "16px 32px",
-                  ":hover": {
-                    backgroundColor: "rgba(239, 174, 100, 0.9)",
-                  },
-                  width: "245px",
-                  height: "72px",
-                  alignSelf: { xs: "center", md: "flex-start" },
-                  fontFamily: 'Teachers', // Apply custom font to button text
-                }}
-              >
-                Get A Consultation
-              </Button>
-            </Box>
-          </Grid>
-
-          {/* Right Image Section */}
-          <Grid item xs={12} md={6}>
-            <Box
+              Get To Know
+            </Typography>
+            <Typography
+              variant="h1"
               sx={{
-                display: "flex",
-                justifyContent: { xs: "center", md: "flex-end" },
-                height: "100%",
-                backgroundImage: `url(${EKIB2})`, // Using the image as a background URL
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                borderRadius: '180px 0px 0px 0px',
-                height: { xs: '400px', sm: '450px', md: '500px' }, // Set height based on screen size
+                fontSize: { xs: '48px', md: '72px' },
+                fontWeight: 700,
+                color: "rgba(255, 255, 255, 1)",
+                fontFamily: 'Teachers',
+                lineHeight: 1.1,
+                mb: 4,
+                letterSpacing: '-0.05em',
+                "&:hover": {
+                  textShadow: "0px 0px 10px rgba(255,255,255,0.3)",
+                  cursor: 'default',
+                }
               }}
-            />
-          </Grid>
+            >
+              Ekib Ekure
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                fontSize: "20px",
+                fontStyle: "italic",
+                fontWeight: 500,
+                lineHeight: 1.5,
+                color: "rgba(255, 255, 255, 0.7)",
+                fontFamily: 'Teachers',
+                mb: 6,
+                "&:hover": {
+                  textShadow: "0px 0px 10px rgba(255,255,255,0.3)",
+                  cursor: 'default',
+                }
+              }}
+            >
+              Esq.
+            </Typography>
+            <Button
+              variant="contained"
+              onClick={handleConsultationClick}
+              sx={{
+                backgroundColor: "#EFAE64",
+                py: 2,
+                px: 6,
+                fontSize: '1.1rem',
+                borderRadius: 20,
+                "&:hover": {
+                  backgroundColor: "rgba(239, 174, 100, 0.9)",
+                  transform: "scale(1.02)",
+                  boxShadow: '0px 6px 15px rgba(0,0,0,0.3)',
+                },
+                fontFamily: 'Teachers',
+                boxShadow: '0px 4px 10px rgba(0,0,0,0.2)',
+              }}
+            >
+              Get A Consultation
+            </Button>
+          </Box>
         </Grid>
-      </Box>
+      </Grid>
+      <style jsx>{`
+        @keyframes subtleBackground {
+          0% { filter: brightness(1) }
+          50% { filter: brightness(1.05) }
+          100% { filter: brightness(1) }
+        }
+      `}</style>
     </Box>
   );
 };

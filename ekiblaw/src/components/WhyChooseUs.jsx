@@ -1,7 +1,7 @@
-import { Box, Typography, Divider, Grid, Card, CardContent } from '@mui/material';
-import whychooseusone from '../assets/whychooseusone.webp';
-import whychooseustwo from '../assets/whychooseustwo.webp';
-import whychooseusthree from '../assets/whychooseusthree.webp';
+import { Box, Typography, Grid, Card, CardContent, Divider } from '@mui/material';
+import businesslaw from '../assets/businesslaw.avif';
+import criminaldefence from '../assets/criminaldefence.webp';
+import personalinjury from '../assets/personalinjury.avif';
 
 const WhyChooseUs = () => {
   return (
@@ -21,7 +21,7 @@ const WhyChooseUs = () => {
       </Box>
 
       <Grid container spacing={3} sx={{ marginTop: 2 }}>
-        {/* Expertise Card */}
+        {/* Deep Expertise Card */}
         <Grid item xs={12} sm={6} md={4}>
           <Card sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%' }}>
             <Box
@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
                 aspectRatio: '1.66',
                 borderRadius: 1,
                 minHeight: 220,
-                backgroundImage: `url(${whychooseusone})`,
+                backgroundImage: `url(${businesslaw})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
                   lineHeight: '30px',
                 }}
               >
-                Our firm specializes in handling complex personal injury cases. Whether it's a motor vehicle accident or a slip and fall, we leverage our deep expertise to secure the compensation you deserve.
+                Ekib Ekure is an experienced trial attorney with a stellar trial record. She has successfully handled a wide range of cases from traffic violations to serious felonies, leveraging her deep expertise to fight for clients.
               </Typography>
             </CardContent>
           </Card>
@@ -70,7 +70,7 @@ const WhyChooseUs = () => {
                 aspectRatio: '1.66',
                 borderRadius: 1,
                 minHeight: 220,
-                backgroundImage: `url(${whychooseustwo})`,
+                backgroundImage: `url(${criminaldefence})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
@@ -95,7 +95,7 @@ const WhyChooseUs = () => {
                   lineHeight: '30px',
                 }}
               >
-                We understand that every injury case is unique. Our personalized approach ensures tailored legal strategies that meet the specific needs of each client, fighting for your rights every step of the way.
+                We understand that each case is unique. Attorney Ekure’s personalized approach ensures tailored legal strategies, putting each client in the best possible position based on their specific case facts.
               </Typography>
             </CardContent>
           </Card>
@@ -110,7 +110,7 @@ const WhyChooseUs = () => {
                 aspectRatio: '1.66',
                 borderRadius: 1,
                 minHeight: 220,
-                backgroundImage: `url(${whychooseusthree})`,
+                backgroundImage: `url(${personalinjury})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
@@ -135,7 +135,7 @@ const WhyChooseUs = () => {
                   lineHeight: '30px',
                 }}
               >
-                At Ekib Ekure Law, we uphold the highest standards of integrity and ethics. We handle personal injury cases with transparency and honesty, ensuring our clients are well-informed and confident in their legal journey.
+                Ekib Ekure Law prides itself on its commitment to transparency, honesty, and the highest ethical standards. From personal injury cases to criminal defense, we ensure our clients feel informed and confident in the process.
               </Typography>
             </CardContent>
           </Card>
