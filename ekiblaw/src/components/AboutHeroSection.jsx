@@ -63,24 +63,6 @@ const AboutHeroSection = () => {
             >
               Ekib Ekure
             </Typography>
-            {/* <Typography
-              variant="h6"
-              sx={{
-                fontSize: "20px",
-                fontStyle: "italic",
-                fontWeight: 500,
-                lineHeight: 1.5,
-                color: "rgba(255, 255, 255, 0.7)",
-                fontFamily: 'Teachers',
-                mb: 6,
-                "&:hover": {
-                  textShadow: "0px 0px 10px rgba(255,255,255,0.3)",
-                  cursor: 'default',
-                }
-              }}
-            >
-              Esq.
-            </Typography> */}
             <Button
               variant="contained"
               onClick={handleConsultationClick}

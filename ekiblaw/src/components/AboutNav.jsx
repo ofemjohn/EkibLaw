@@ -49,7 +49,7 @@ const AboutNav = () => {
           src={logo2}
           alt="Vanguard Law Firm Logo"
           style={{
-            maxWidth: '350px', // Adjusted for better visibility
+            maxWidth: '600px', // Adjusted for better visibility
             height: 'auto',
             cursor: 'pointer',
             filter: 'drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3))',
