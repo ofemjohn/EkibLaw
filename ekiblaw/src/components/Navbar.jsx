@@ -48,7 +48,7 @@ const Navbar = () => {
           src={logo2}
           alt="Vanguard Law Firm Logo"
           style={{
-            maxWidth: '550px', // Increased max-width for better visibility
+            maxWidth: '700px', // Increased max-width for better visibility
             height: 'auto',
             cursor: 'pointer',
             filter: 'drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3))',

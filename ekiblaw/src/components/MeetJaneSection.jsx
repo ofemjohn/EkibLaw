@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button, Divider, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import EKIB9 from '../assets/EKIB9.webp'; // Using the correct .webp image
+import EKIB8 from '../assets/EKIB8.webp'; // Using the correct .webp image
 
 const MeetJaneSection = () => {
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ const MeetJaneSection = () => {
             backgroundColor: '#D8B482',
             borderRadius: '4px 0px 0px 0px',
             overflow: 'hidden',
-            backgroundImage: `url(${EKIB9})`,  // Using the imported image as a background
+            backgroundImage: `url(${EKIB8})`,  // Using the imported image as a background
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
