@@ -66,8 +66,8 @@ const HeroSection = () => {
                   ':hover': {
                     backgroundColor: 'rgba(239, 174, 100, 0.9)',
                   },
-                  width: { xs: '155.5px', md: '245px' },
-                  height: { xs: '45px', md: '72px' },  
+                  width: { xs: '200px', md: '245px' }, 
+                  height: { xs: '60px', md: '72px' },  
                   alignSelf: { xs: 'center', md: 'flex-start' },
                   fontFamily: 'Teachers',
                 }}
