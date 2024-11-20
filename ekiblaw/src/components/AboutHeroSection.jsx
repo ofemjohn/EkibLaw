@@ -63,7 +63,7 @@ const AboutHeroSection = () => {
             >
               Ekib Ekure
             </Typography>
-            <Typography
+            {/* <Typography
               variant="h6"
               sx={{
                 fontSize: "20px",
@@ -80,7 +80,7 @@ const AboutHeroSection = () => {
               }}
             >
               Esq.
-            </Typography>
+            </Typography> */}
             <Button
               variant="contained"
               onClick={handleConsultationClick}
