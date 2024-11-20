@@ -40,7 +40,7 @@ const MeetJaneSection = () => {
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, fontSize: { xs: '24px', md: '40px' } }}>
             <Divider orientation="vertical" sx={{ height: { xs: 30, md: 58 }, backgroundColor: '#447F6D', width: '5px' }} />
             <Typography variant="h4" sx={{ fontWeight: 700, color: 'rgba(61, 61, 61, 1)', fontFamily: 'Teachers' }}>
-              Meet Ekib Ekure, Esq
+              Meet Ekib Ekure
             </Typography>
           </Box>
           <Typography
