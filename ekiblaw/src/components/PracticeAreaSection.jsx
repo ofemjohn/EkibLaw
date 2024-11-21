@@ -180,21 +180,21 @@ const PracticeAreaSection = () => {
             {selectedArea === 'business-law' && (
               <div>
                 <Typography variant="body1" sx={{ fontFamily: 'Teachers' }}>
-                  Business law is crucial when starting and managing a business. From formation to contracts, Ekib Ekure Law is here to help you every step of the way.
+                  Starting a business is an exciting yet challenging experience. At Ekib Ekure Law, we provide expert legal counsel from the formation of your business to its ongoing maintenance. Whether you’re incorporating your business, registering your trademarks, or drafting key contracts, we are here to ensure your business is set up for success.
                 </Typography>
               </div>
             )}
             {selectedArea === 'criminal-defense' && (
               <div>
                 <Typography variant="body1" sx={{ fontFamily: 'Teachers' }}>
-                  Criminal defense services for all kinds of charges including traffic offenses, DUIs, misdemeanors, felonies, and more.
+                  Facing criminal charges can be overwhelming, but Ekib Ekure Law is here to fight for your rights. From traffic violations to serious felony charges, we offer comprehensive defense services. Whether you're dealing with a DUI, a misdemeanor, or felony charges like theft, drug offenses, or assault, we aim to provide tailored solutions for our clients to achieve the best possible outcomes.
                 </Typography>
               </div>
             )}
             {selectedArea === 'personal-injury' && (
               <div>
                 <Typography variant="body1" sx={{ fontFamily: 'Teachers' }}>
-                  Our personal injury services include helping victims of accidents, falls, and other injuries claim their rightful compensation.
+                  Injuries caused by the negligence of others can have lasting impacts. Whether it’s a car accident, dog bite, or slip and fall, Ekib Ekure Law is dedicated to helping victims get the compensation they deserve. We fight tirelessly to protect your rights and help you recover the damages you’re entitled to.
                 </Typography>
               </div>
             )}

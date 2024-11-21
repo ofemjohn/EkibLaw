@@ -28,8 +28,9 @@ const MeetJaneSection = () => {
             borderRadius: '4px 0px 0px 0px',
             overflow: 'hidden',
             backgroundImage: `url(${EKIB8})`,  // Using the imported image as a background
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundSize: 'cover',  // Ensures the image covers the entire container
+            backgroundPosition: 'center top', // Ensures the image stays centered but starts at the top (for mobile optimization)
+            transition: 'background-position 0.5s ease-in-out', // Smooth transition for background image adjustments
           }}
         />
       </Grid>
