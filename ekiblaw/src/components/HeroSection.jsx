@@ -55,7 +55,7 @@ const HeroSection = () => {
                 },
               }}
             >
-              Providing expert legal counsel in personal injury, Business <br /> law, and Criminal Defence.
+              Providing expert legal counsel in Business Law, Personal <br /> Injury, and Criminal Defense.
             </Typography>
             <Link smooth to="#contact" style={{ textDecoration: 'none' }}>
               <Button
