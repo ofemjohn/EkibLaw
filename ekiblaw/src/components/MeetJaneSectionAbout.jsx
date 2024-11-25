@@ -23,7 +23,7 @@ const MeetJaneSectionAbout = () => {
                 marginBottom: '16px',
               }}
             >
-              About the Firm
+              Meet Our Attorney
             </Typography>
           </Box>
 
@@ -38,31 +38,46 @@ const MeetJaneSectionAbout = () => {
               textAlign: 'justify',
             }}
           >
-            Ekib Ekure Law was established in 2024 by Attorney Ekib Ekure to serve the people of Georgia. The firm provides services in a variety of legal areas including Business Law, Criminal Defense, and Personal Injury.
+             {/* Breaking the text into paragraphs as per the client's request */}
+             Ekib Ekure is the founder and Managing Attorney at Ekib Ekure Law LLC. She is an experienced trial attorney who has always fought for the rights of the people.
+         </Typography>
+         <Typography
+           sx={{
+             fontFamily: 'Teachers',
+             color: 'rgba(79, 79, 79, 1)',
+             lineHeight: { xs: '28px', md: '32px' },
+             fontSize: { xs: '16px', md: '20px' },
+             fontWeight: 400,
+             textAlign: 'justify',
+           }}
+         >
+           Her fight for the people began at a young age. As a child, she was regularly called upon by her friends to “defend them” when parents accused them of wrongdoing. The saying was “if we talk, we will get in trouble but if Ekib talks for us, we won’t get into trouble.” What she did not know was that this little exercise in trouble avoidance was preparing her for a career as a defense attorney. She’s not afraid to fight for you.
+         </Typography>
+         <Typography
+           sx={{
+             fontFamily: 'Teachers',
+             color: 'rgba(79, 79, 79, 1)',
+             lineHeight: { xs: '28px', md: '32px' },
+             fontSize: { xs: '16px', md: '20px' },
+             fontWeight: 400,
+             textAlign: 'justify',
+           }}
+         >
+           Ekib started her career as a Public Defender where she represented hundreds of indigent clients in various cases from traffic violations to serious felonies. Her zeal for advocacy led to a stellar trial record and effective plea deals. Her approach to each case is practical and realistic. She understands that each case is different, so her goal is to always put the client in the best possible position based on the facts of their case.
+         </Typography>
+         <Typography
+           sx={{
+             fontFamily: 'Teachers',
+             color: 'rgba(79, 79, 79, 1)',
+             lineHeight: { xs: '28px', md: '32px' },
+             fontSize: { xs: '16px', md: '20px' },
+             fontWeight: 400,
+             textAlign: 'justify',
+           }}
+         >
+           Ekib was born in Nigeria but grew up in Columbia, South Carolina. She spent her formative years in South Carolina School of Law where she graduated from the University of South Carolina with a degree in African American Studies with a minor in Political Science. She completed her legal education at North Carolina Central University where she graduated Cum Laude with a host of other honors and awards. She further continued her legal education by seeking a second law degree from the Nigeria Law School where she also graduated with high honors. In her spare time, Ekib enjoys volunteering with her church, finding new restaurants in Atlanta, and traveling the world.
 
-            <br /><br />
 
-            <strong>Business</strong> – starting a business can be an exciting and intimidating time. Attorney Ekure will be with you from the formation to the maintenance of your business.
-
-            <br /><br />
-
-            <strong>Criminal Defense</strong> – hearing the words “you are under arrest” can lead to a flood of emotions. It is paramount that you have an experienced attorney on your side. Attorney Ekure has experience representing clients charged in various criminal cases from traffic offenses to felony cases.
-            
-            <br /><br />
-
-            Traffic cases are tickets for moving or motor violations. These cases are generally handled in municipal, traffic, or state court.
-
-            <br /><br />
-
-            Misdemeanor cases are offenses punishable by 12 months or less in the county jail. These offenses are generally handled in state court. They include but are not limited to DUIs, Family Violence Battery, Simple Assault, Possession of Marijuana less than an ounce, etc.
-
-            <br /><br />
-
-            Felony cases are the more serious offenses in our criminal justice system. These offenses are punishable by more than a year in custody, a life sentence, or death in certain cases. Felony cases take a special set of skills to maneuver. Call us today to discuss your rights.
-
-            <br /><br />
-
-            <strong>Personal Injury</strong> – if you have been injured by the negligence of others you have a limited time to exercise rights provided by law. Motor vehicle accidents, slip and falls can lead to serious injuries that may lead to lifelong consequences. Call Ekib Ekure Law to fight for your rights.
           </Typography>
         </Box>
       </Grid>

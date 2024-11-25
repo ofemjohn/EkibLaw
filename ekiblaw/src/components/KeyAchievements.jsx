@@ -25,7 +25,7 @@ const achievements = [
   },
   {
     title: "Educational Distinction:",
-    description: "Graduated with honors from top institutions, including the University of South Carolina and Nigeria Law School.",
+    description: "Graduated with honors from top institutions, including the North Carolina Central University School of Law and Nigeria Law School.",
     icon: <BookIcon sx={{ color: '#4682B4' }} />,
   },
   {

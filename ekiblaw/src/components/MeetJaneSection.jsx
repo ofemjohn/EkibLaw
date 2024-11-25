@@ -41,7 +41,7 @@ const MeetJaneSection = () => {
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, fontSize: { xs: '24px', md: '40px' } }}>
             <Divider orientation="vertical" sx={{ height: { xs: 30, md: 58 }, backgroundColor: '#447F6D', width: '5px' }} />
             <Typography variant="h4" sx={{ fontWeight: 700, color: 'rgba(61, 61, 61, 1)', fontFamily: 'Teachers' }}>
-              Meet Ekib Ekure
+            About the Firm
             </Typography>
           </Box>
           <Typography
@@ -54,7 +54,14 @@ const MeetJaneSection = () => {
               fontFamily: 'Teachers',
             }}
           >
-            Ekib Ekure is the founder and Managing Attorney at Ekib Ekure Law LLC. She is an experienced trial attorney who has always fought for the rights of the people. Her fight for the people began at a young age. As a child, she was regularly called upon by her friends to defend them when parents accused them of wrongdoing. The saying was “if we talk, we will get in trouble but if Ekib talks for us, we won’t get into trouble.” What she did not know was that this little exercise in trouble avoidance was preparing her for a career as a defense attorney.
+Ekib Ekure Law was established in 2024 by Attorney Ekib Ekure to serve the people of Georgia. The firm provides services in a variety of legal areas including Business Law, Criminal Defense, and Personal Injury.
+         
+<br /><br />
+starting a business can be an exciting and intimidating time. Attorney Ekure will be with you from the formation to the maintenance of your business.
+<br /><br />
+hearing the words “you are under arrest” can lead to a flood of emotions. It is paramount that you have an experienced attorney on your side. Attorney Ekure has experience representing clients charged in various criminal cases from traffic offenses to felony cases.
+<br /><br />
+
           </Typography>
         </Box>
         <Button

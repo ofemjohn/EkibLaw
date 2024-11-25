@@ -24,7 +24,7 @@ const Footer = () => {
 
   const contactData = [
     { icon: <PhoneIcon sx={{ color: '#D8B482' }} />, text: "(678) 632-0858" },
-    { icon: <EmailIcon sx={{ color: '#D8B482' }} />, text: "ekibekurelaw@gmail.com" },
+    { icon: <EmailIcon sx={{ color: '#D8B482' }} />, text: "ekib@ekibekurelaw.com" },
   ];
 
   const navItems = [
